@@ -11,6 +11,7 @@ body {
     background: #ffffff;
 }
 
+/* HEADER */
 header {
     padding: 25px 40px;
     border-bottom: 1px solid #e5e5e5;
@@ -27,6 +28,7 @@ header p {
     color: #555;
 }
 
+/* LAYOUT */
 .container {
     display: flex;
     max-width: 1050px;
@@ -34,27 +36,37 @@ header p {
     padding: 0 20px;
 }
 
+/* SIDEBAR */
 .sidebar {
     width: 260px;
     margin-right: 40px;
 }
 
+/* PHOTO */
 .sidebar img {
     width: 180px;
     border: 1px solid #ddd;
     margin-bottom: 15px;
 }
 
+/* CV BUTTON (FIXED) */
 .cv-btn {
     display: inline-block;
     margin: 10px 0 20px;
-    padding: 7px 12px;
+    padding: 10px 16px;
     background: #002f6c;
     color: white;
     text-decoration: none;
     font-size: 14px;
+    border-radius: 4px;
+    font-weight: 600;
 }
 
+.cv-btn:hover {
+    background: #001f4d;
+}
+
+/* SIDEBAR TEXT */
 .sidebar h3 {
     font-size: 14px;
     margin-top: 20px;
@@ -62,6 +74,7 @@ header p {
     color: #444;
 }
 
+/* LINKS */
 .sidebar a {
     display: block;
     font-size: 14px;
@@ -74,6 +87,7 @@ header p {
     text-decoration: underline;
 }
 
+/* CONTENT */
 .content {
     flex: 1;
 }
@@ -86,11 +100,13 @@ h2 {
     margin-top: 25px;
 }
 
+/* PUBLICATIONS */
 .pub {
     margin-bottom: 12px;
     line-height: 1.5;
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
@@ -110,11 +126,13 @@ footer {
 
 <div class="container">
 
+<!-- SIDEBAR -->
 <div class="sidebar">
 
 <img src="photo.jpg" alt="Kawshik Ray">
 
-<a class="cv-btn" href="Kawshik_Ray_CV.pdf" target="_blank">Download CV</a>
+<!-- FIXED CV BUTTON -->
+<a class="cv-btn" href="Kawshik_Ray_CV.pdf" target="_blank">📄 Download CV</a>
 
 <h3>Profiles</h3>
 
@@ -138,6 +156,7 @@ footer {
 
 </div>
 
+<!-- MAIN CONTENT -->
 <div class="content">
 
 <h2>About</h2>
