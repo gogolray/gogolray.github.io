@@ -1,141 +1,127 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kawshik Ray</title>
-    <style>
-        body {
-            font-family: "Helvetica Neue", Arial, sans-serif;
-            margin: 0;
-            background: #f7f7f7;
-            color: #222;
-        }
+<title>Kawshik Ray</title>
 
-        header {
-            background: #1a1a1a;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
+<style>
+body {
+    font-family: Georgia, serif;
+    margin: 0;
+    color: #222;
+}
 
-        header h1 { margin: 0; }
-        header p { color: #ccc; }
+header {
+    padding: 30px;
+    border-bottom: 1px solid #ddd;
+}
 
-        nav {
-            background: white;
-            text-align: center;
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
+.container {
+    display: flex;
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+}
 
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-        }
+.sidebar {
+    width: 260px;
+}
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-            background: white;
-        }
+.sidebar img {
+    width: 180px;
+    margin-bottom: 15px;
+}
 
-        h2 {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-        }
+.sidebar a {
+    display: block;
+    margin: 6px 0;
+    color: #0056b3;
+    text-decoration: none;
+}
 
-        ul { padding-left: 20px; }
+.cv-btn {
+    background: #0056b3;
+    color: white;
+    padding: 8px;
+    display: inline-block;
+    margin: 10px 0;
+    text-decoration: none;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
+.content {
+    flex: 1;
+}
+
+h2 {
+    border-bottom: 1px solid #ddd;
+}
+
+.pub {
+    margin-bottom: 12px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Kawshik Ray</h1>
-    <p>PhD (IIT Kanpur) | Assistant Professor of English</p>
+<h1>Kawshik Ray</h1>
+<p>PhD (IIT Kanpur) | Assistant Professor of English</p>
 </header>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-</nav>
 
 <div class="container">
 
-<section id="about">
-<h2>About</h2>
-<p>
-I am Assistant Professor of English at Amity University Kolkata. My work engages
-planetary cosmopolitics, environmental humanities, and science studies, drawing
-on thinkers such as Bruno Latour and contemporary climate fiction.
-</p>
-</section>
+<div class="sidebar">
 
-<section id="research">
-<h2>Research Interests</h2>
-<ul>
-<li>Planetary Cosmopolitics</li>
-<li>Environmental Humanities</li>
-<li>Climate Change Fiction (Cli-Fi)</li>
-<li>Actor-Network Theory (Bruno Latour)</li>
-<li>Posthumanism</li>
-<li>Dalit Feminist Studies</li>
-</ul>
-</section>
+<img src="photo.jpg">
 
-<section id="publications">
-<h2>Publications</h2>
-<ul>
-<li><b>“The Emerging Political Actors in the Anthropocene”</b>, Environmental Humanities (Duke University Press) – forthcoming</li>
-<li><b>“A Comparative Reading of Karukku and The Prisons We Broke”</b>, Contemporary Voice of Dalits (SAGE)</li>
-<li><b>“Ecology as a Fact”</b>, Daath Voyage (2019)</li>
-<li><b>“Towards an Ecological Ethics”</b>, Daath Voyage (2017)</li>
-<li><b>“Plurality of Immigrant Experiences”</b>, GNOSIS (2017)</li>
-</ul>
-</section>
+<a class="cv-btn" href="Kawshik_Ray_CV.pdf" target="_blank">Download CV</a>
 
-<section id="teaching">
-<h2>Teaching</h2>
-<p>
-Courses taught include Business Communication, Modern Indian English Literature,
-Literary Theory, and English Drama.
-</p>
-</section>
+<b>Profiles</b>
+<a href="#">Google Scholar</a>
+<a href="#">Scopus</a>
+<a href="#">ORCID</a>
 
-<section id="education">
-<h2>Education</h2>
-<ul>
-<li>PhD, English — IIT Kanpur (2015–2022)</li>
-<li>MA English — University of Calcutta</li>
-<li>BA English — Ramakrishna Mission Vidyamandira</li>
-</ul>
-</section>
+<br>
+<b>Navigate</b>
+<a href="courses.html">Courses</a>
 
-<section id="contact">
-<h2>Contact</h2>
-<p>
-Email: kray@kol.amity.edu<br>
-Phone: +91 8960562636
-</p>
-</section>
+<br>
+<b>Contact</b>
+<a href="mailto:kray@kol.amity.edu">Email</a>
 
 </div>
 
-<footer>
-© 2026 Kawshik Ray
-</footer>
+<div class="content">
+
+<h2>About</h2>
+<p>
+Assistant Professor working in planetary cosmopolitics, environmental humanities,
+and science studies with a focus on Latourian frameworks.
+</p>
+
+<h2>Publications</h2>
+
+<div class="pub">
+Ray, Kawshik. “The Emerging Political Actors in the Anthropocene.”
+<i>Environmental Humanities</i> (Duke University Press), forthcoming.
+</div>
+
+<div class="pub">
+Ray, Kawshik. “Dalit Feminist Reading of Karukku.”
+<i>Contemporary Voice of Dalits</i> (SAGE).
+</div>
+
+<h2>Conference & Awards</h2>
+
+<ul>
+<li>ASLE International Conference, UC Davis (2019)</li>
+<li>ASLE Travel Award (2019)</li>
+<li>UGC NET Qualified (2014)</li>
+<li>IIT Kanpur Excellence Grant</li>
+</ul>
+
+</div>
+</div>
 
 </body>
 </html>
