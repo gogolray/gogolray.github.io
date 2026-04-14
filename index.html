@@ -5,60 +5,111 @@
 
 <style>
 body {
-    font-family: Georgia, serif;
+    font-family: Georgia, "Times New Roman", serif;
     margin: 0;
     color: #222;
+    background: #ffffff;
 }
 
+/* HEADER */
 header {
-    padding: 30px;
-    border-bottom: 1px solid #ddd;
+    padding: 25px 40px;
+    border-bottom: 1px solid #e5e5e5;
 }
 
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: normal;
+}
+
+header p {
+    margin: 5px 0 0;
+    color: #555;
+}
+
+/* LAYOUT */
 .container {
     display: flex;
-    max-width: 1100px;
-    margin: auto;
-    padding: 30px;
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 0 20px;
 }
 
+/* SIDEBAR */
 .sidebar {
     width: 260px;
+    margin-right: 40px;
 }
 
+/* PHOTO */
 .sidebar img {
     width: 180px;
+    height: auto;
     margin-bottom: 15px;
+    border: 1px solid #ddd;
 }
 
+/* CV BUTTON */
+.cv-btn {
+    display: inline-block;
+    margin: 10px 0 20px;
+    padding: 7px 12px;
+    background: #002f6c;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* SIDEBAR TEXT */
+.sidebar h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    color: #444;
+}
+
+/* LINKS */
 .sidebar a {
     display: block;
-    margin: 6px 0;
-    color: #0056b3;
+    font-size: 14px;
+    color: #003366;
     text-decoration: none;
+    margin: 4px 0;
 }
 
-.cv-btn {
-    background: #0056b3;
-    color: white;
-    padding: 8px;
-    display: inline-block;
-    margin: 10px 0;
-    text-decoration: none;
+.sidebar a:hover {
+    text-decoration: underline;
 }
 
+/* MAIN CONTENT */
 .content {
     flex: 1;
 }
 
 h2 {
+    font-size: 18px;
+    font-weight: normal;
     border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+    margin-top: 25px;
 }
 
+/* PUBLICATIONS */
 .pub {
     margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #777;
 }
 </style>
+
 </head>
 
 <body>
@@ -70,58 +121,94 @@ h2 {
 
 <div class="container">
 
+<!-- SIDEBAR -->
 <div class="sidebar">
 
-<img src="photo.jpg">
+<!-- PHOTO -->
+<img src="photo.jpg" alt="Kawshik Ray">
 
+<!-- CV -->
 <a class="cv-btn" href="Kawshik_Ray_CV.pdf" target="_blank">Download CV</a>
 
-<b>Profiles</b>
+<!-- LINKS -->
+<h3>Profiles</h3>
 <a href="#">Google Scholar</a>
 <a href="#">Scopus</a>
 <a href="#">ORCID</a>
 
-<br>
-<b>Navigate</b>
+<h3>Navigate</h3>
 <a href="courses.html">Courses</a>
 
-<br>
-<b>Contact</b>
-<a href="mailto:kray@kol.amity.edu">Email</a>
+<h3>Contact</h3>
+<a href="mailto:kray@kol.amity.edu">kray@kol.amity.edu</a>
 
 </div>
 
+<!-- CONTENT -->
 <div class="content">
 
 <h2>About</h2>
 <p>
-Assistant Professor working in planetary cosmopolitics, environmental humanities,
-and science studies with a focus on Latourian frameworks.
+I am Assistant Professor of English at Amity University Kolkata. My research develops a framework of 
+<b>planetary cosmopolitics</b> at the intersection of environmental humanities, science studies, and literary theory, 
+extending Latourian approaches to climate fiction and Anthropocene thought.
+</p>
+
+<h2>Research Interests</h2>
+<p>
+Planetary Cosmopolitics; Environmental Humanities; Climate Fiction (Cli-Fi); Actor-Network Theory; 
+Posthumanism; Dalit Feminist Studies.
 </p>
 
 <h2>Publications</h2>
 
 <div class="pub">
-Ray, Kawshik. “The Emerging Political Actors in the Anthropocene.”
+Ray, Kawshik. “The Emerging Political Actors in the Anthropocene: Cosmopolitics of the Earthbounds in Amitav Ghosh’s <i>Gun Island</i>.”
 <i>Environmental Humanities</i> (Duke University Press), forthcoming.
 </div>
 
 <div class="pub">
-Ray, Kawshik. “Dalit Feminist Reading of Karukku.”
+Ray, Kawshik. “A Comparative Reading of Bama’s <i>Karukku</i> and Baby Kamble’s <i>The Prisons We Broke</i>: A Dalit Feminist Approach.”
 <i>Contemporary Voice of Dalits</i> (SAGE).
 </div>
 
-<h2>Conference & Awards</h2>
+<div class="pub">
+Ray, Kawshik. “Ecology as a Fact: ‘Rescuing’ Nature from Discourse.”
+<i>Daath Voyage</i>, 2019.
+</div>
 
+<div class="pub">
+Ray, Kawshik. “Towards an Ecological Ethics.”
+<i>Daath Voyage</i>, 2017.
+</div>
+
+<h2>Conference & Awards</h2>
 <ul>
-<li>ASLE International Conference, UC Davis (2019)</li>
+<li>ASLE Biennial International Conference, University of California, Davis (2019)</li>
 <li>ASLE Travel Award (2019)</li>
-<li>UGC NET Qualified (2014)</li>
-<li>IIT Kanpur Excellence Grant</li>
+<li>UGC NET Qualified for Assistant Professorship (2014)</li>
+<li>Department Excellence Grant, IIT Kanpur</li>
 </ul>
 
+<h2>Teaching</h2>
+<p>
+Business Communication; Modern Indian English Literature; Literary Theory; English Drama.
+</p>
+
+<h2>Education</h2>
+<p>
+PhD, IIT Kanpur (2015–2022)<br>
+MA, University of Calcutta<br>
+BA, Ramakrishna Mission Vidyamandira
+</p>
+
 </div>
+
 </div>
+
+<footer>
+© 2026 Kawshik Ray
+</footer>
 
 </body>
 </html>
