@@ -3,85 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ray Kawshik</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  color: #111827;
   background: #ffffff;
+  color: #111827;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   padding: 20px;
-  font-size: 0.95rem;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 nav a {
   text-decoration: none;
   color: #374151;
-  transition: 0.3s;
+  font-weight: 500;
 }
 
 nav a:hover {
   color: #1e3a8a;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
-  text-align: center;
-  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 20px;
+  flex-wrap: wrap;
 }
 
 .hero img {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.hero-text {
+  max-width: 500px;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  margin: 20px 0 10px;
+  margin: 0;
 }
 
 .hero h3 {
+  margin: 10px 0;
   font-weight: 400;
   color: #374151;
 }
 
 .hero p {
-  max-width: 600px;
-  margin: 20px auto;
+  margin-top: 20px;
+  line-height: 1.7;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 15px;
-  padding: 12px 24px;
+  margin-top: 20px;
+  padding: 12px 26px;
   background: #1e3a8a;
   color: white;
-  text-decoration: none;
   border-radius: 8px;
+  text-decoration: none;
 }
 
 .btn:hover {
   background: #172554;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section {
   max-width: 900px;
-  margin: 60px auto;
+  margin: 80px auto;
   padding: 0 20px;
 }
 
@@ -91,15 +102,12 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
+/* CARDS */
 .card {
-  border: 1px solid #e5e7eb;
-  padding: 20px;
-  border-radius: 10px;
+  border-left: 3px solid #1e3a8a;
+  padding: 15px 20px;
   margin-bottom: 20px;
-}
-
-.card:hover {
-  border-color: #1e3a8a;
+  background: #f9fafb;
 }
 
 /* FOOTER */
@@ -108,6 +116,7 @@ footer {
   padding: 40px;
   color: #6b7280;
 }
+
 </style>
 </head>
 
@@ -116,31 +125,35 @@ footer {
 <nav>
   <a href="#about">About</a>
   <a href="#research">Research</a>
-  <a href="#teaching">Teaching</a>
   <a href="#publications">Publications</a>
+  <a href="#teaching">Teaching</a>
 </nav>
 
 <section class="hero">
+
   <img src="profile.jpg" alt="Ray Kawshik">
 
-  <h1>Ray Kawshik</h1>
-  <h3>Assistant Professor | Literature & Planetary Cosmopolitics</h3>
+  <div class="hero-text">
+    <h1>Ray Kawshik</h1>
+    <h3>Assistant Professor | Literature & Planetary Cosmopolitics</h3>
 
-  <p>
-    I work on planetary fiction, nonhuman agency, and cosmopolitical thought,
-    drawing on Latour, Whitehead, and science studies to rethink literature
-    as a site of world-making.
-  </p>
+    <p>
+      I study how literature participates in the making of planetary realities.
+      My work brings together Bruno Latour, Whitehead, and science studies to rethink
+      agency, temporality, and nonhuman beinghood.
+    </p>
 
-  <a href="cv.pdf" class="btn">Download CV</a>
+    <a href="cv.pdf" class="btn">Download CV</a>
+  </div>
+
 </section>
 
 <section id="about" class="section">
   <h2>About</h2>
   <p>
-    My research explores how literature participates in shaping planetary realities.
-    I examine the relational ontology of humans and nonhumans through fiction,
-    philosophy, and environmental humanities.
+    My research develops a framework of planetary cosmopolitics that extends the
+    Earthbound into a distributed, relational ontology. I approach literature not as
+    representation, but as a site where worlds are actively composed.
   </p>
 </section>
 
@@ -149,27 +162,19 @@ footer {
 
   <div class="card">
     <strong>Planetary Cosmopolitics</strong>
-    <p>Extending Latour’s Earthbound into planetary-scale relational frameworks.</p>
+    <p>Reworking Latour into planetary-scale relational thinking.</p>
   </div>
 
   <div class="card">
     <strong>Planetary Fiction</strong>
-    <p>Reading Vandana Singh and climate narratives through multiple temporalities.</p>
+    <p>Close readings of Vandana Singh and climate-altered temporalities.</p>
   </div>
 
   <div class="card">
-    <strong>Dalit Feminist Studies</strong>
-    <p>Intersectionality and collective subjectivity in autobiographical writing.</p>
+    <strong>Dalit Feminist Thought</strong>
+    <p>Intersectionality, collective voice, and narrative resistance.</p>
   </div>
 
-</section>
-
-<section id="teaching" class="section">
-  <h2>Teaching</h2>
-  <p>
-    I approach teaching as a collaborative and interdisciplinary process where
-    literature becomes a method for thinking about the world and our place within it.
-  </p>
 </section>
 
 <section id="publications" class="section">
@@ -177,14 +182,20 @@ footer {
 
   <div class="card">
     <strong>Planetary (Cosmo)politics in Planetary Fiction</strong>
-    <p>Exploring climate-altered planetary frameworks through literature.</p>
   </div>
 
   <div class="card">
-    <strong>Dalit Women’s Autobiographies</strong>
-    <p>A comparative study using representational intersectionality.</p>
+    <strong>A Comparative Reading of Dalit Women’s Autobiographies</strong>
   </div>
 
+</section>
+
+<section id="teaching" class="section">
+  <h2>Teaching</h2>
+  <p>
+    I design classrooms that foreground relational thinking, interdisciplinarity,
+    and the active role of literature in shaping contemporary planetary crises.
+  </p>
 </section>
 
 <footer>
