@@ -1,227 +1,172 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Kawshik Ray</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ray Kawshik</title>
 
-<style>
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    margin: 0;
-    color: #222;
-    background: #ffffff;
-}
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-/* HEADER */
-header {
-    padding: 25px 40px;
-    border-bottom: 2px solid #0b3d91;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #111827;
+      line-height: 1.6;
+    }
 
-header h1 {
-    margin: 0;
-    font-size: 30px;
-    color: #0b3d91;
-}
+    header {
+      padding: 80px 20px 40px;
+      text-align: center;
+    }
 
-header p {
-    margin-top: 5px;
-    color: #333;
-}
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
 
-/* LAYOUT */
-.container {
-    display: flex;
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
+    .tagline {
+      font-size: 1.2rem;
+      color: #374151;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
 
-/* SIDEBAR */
-.sidebar {
-    width: 280px;
-    margin-right: 40px;
-}
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #1e3a8a;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
 
-.sidebar img {
-    width: 200px;
-    border: 2px solid #0b3d91;
-    margin-bottom: 15px;
-}
+    .btn:hover {
+      background: #172554;
+    }
 
-/* 🔥 VERY CLEAR CV BUTTON */
-.cv-btn {
-    display: block;
-    width: 200px;
-    text-align: center;
-    margin: 15px 0 25px;
-    padding: 12px;
-    background: #0b3d91;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 6px;
-}
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
 
-.cv-btn:hover {
-    background: #072a66;
-}
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
 
-/* SIDEBAR TEXT */
-.sidebar h3 {
-    font-size: 15px;
-    margin-top: 20px;
-    margin-bottom: 8px;
-    color: #0b3d91;
-}
+    p {
+      margin-bottom: 16px;
+    }
 
-/* LINKS */
-.sidebar a {
-    display: block;
-    font-size: 15px;
-    color: #0b3d91;
-    text-decoration: none;
-    margin: 6px 0;
-}
+    .divider {
+      height: 1px;
+      background: #e5e7eb;
+      margin: 60px 0;
+    }
 
-.sidebar a:hover {
-    text-decoration: underline;
-}
+    .card {
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
 
-/* CONTENT */
-.content {
-    flex: 1;
-}
+    .card:hover {
+      border-color: #1e3a8a;
+      transform: translateY(-2px);
+    }
 
-h2 {
-    font-size: 20px;
-    color: #0b3d91;
-    border-bottom: 2px solid #0b3d91;
-    padding-bottom: 5px;
-    margin-top: 30px;
-}
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
 
-.pub {
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    color: #666;
-}
-</style>
-
+  </style>
 </head>
 
 <body>
 
 <header>
-<h1>Kawshik Ray</h1>
-<p>PhD (IIT Kanpur) | Assistant Professor of English</p>
+  <h1>Ray Kawshik</h1>
+
+  <p class="tagline">
+    Assistant Professor working on planetary cosmopolitics, literature, and the relational ontology of human and nonhuman worlds.
+  </p>
+
+  <a href="cv.pdf" class="btn" target="_blank">Download CV</a>
 </header>
 
-<div class="container">
+<section>
+  <h2>About</h2>
+  <p>
+    My work explores how literature participates in shaping planetary realities. I draw on Bruno Latour, Whitehead, and science studies to rethink agency beyond the human.
+  </p>
+  <p>
+    I am particularly interested in planetary fiction, multiple temporalities, and the articulation of nonhuman beings within narrative forms.
+  </p>
+</section>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
+<div class="divider"></div>
 
-<img src="photo.jpg" alt="Kawshik Ray">
+<section>
+  <h2>Research Constellations</h2>
 
-<!-- 🔥 VERY VISIBLE BUTTON -->
-<a class="cv-btn" href="Kawshik_Ray_CV.pdf" target="_blank">
-DOWNLOAD CV
-</a>
+  <div class="card">
+    <strong>Planetary Cosmopolitics</strong>
+    <p>Developing a framework that extends Latour’s Earthbound into a planetary scale of relational existence.</p>
+  </div>
 
-<h3>Profiles</h3>
+  <div class="card">
+    <strong>Dalit Feminist Narratives</strong>
+    <p>Examining representational intersectionality and collective subjectivity in autobiographical writing.</p>
+  </div>
 
-<a href="https://scholar.google.com/citations?user=sSU0UMgAAAAJ&hl=en" target="_blank">
-Google Scholar
-</a>
+  <div class="card">
+    <strong>Literature & Science Studies</strong>
+    <p>Understanding fiction as an active participant in constructing ecological and cosmopolitical thought.</p>
+  </div>
 
-<a href="https://www.webofscience.com/wos/author/record/MVW-1259-2025" target="_blank">
-Web of Science
-</a>
+</section>
 
-<a href="https://orcid.org/0000-0001-6723-7561" target="_blank">
-ORCID
-</a>
+<div class="divider"></div>
 
-<h3>Navigate</h3>
-<a href="courses.html">Courses</a>
+<section>
+  <h2>Selected Work</h2>
 
-<h3>Contact</h3>
-<a href="mailto:kray@kol.amity.edu">kray@kol.amity.edu</a>
+  <div class="card">
+    <strong>Planetary (Cosmo)politics in Planetary Fiction</strong>
+    <p>Explores Vandana Singh’s work through climate-altered planetary frameworks.</p>
+  </div>
 
-</div>
+  <div class="card">
+    <strong>Comparative Reading of Dalit Women’s Autobiographies</strong>
+    <p>A study of Bama and Baby Kamble through intersectional frameworks.</p>
+  </div>
 
-<!-- MAIN CONTENT -->
-<div class="content">
+</section>
 
-<h2>About</h2>
-<p>
-I am Assistant Professor of English at Amity University Kolkata. My research develops a framework of 
-<b>planetary cosmopolitics</b> at the intersection of environmental humanities, science studies, and literary theory, 
-extending Latourian approaches to climate fiction and Anthropocene thought.
-</p>
+<div class="divider"></div>
 
-<h2>Research Interests</h2>
-<p>
-Planetary Cosmopolitics; Environmental Humanities; Climate Fiction (Cli-Fi); Actor-Network Theory; 
-Posthumanism; Dalit Feminist Studies.
-</p>
-
-<h2>Publications</h2>
-
-<div class="pub">
-Ray, Kawshik. “The Emerging Political Actors in the Anthropocene: Cosmopolitics of the Earthbounds in Amitav Ghosh’s <i>Gun Island</i>.”
-<i>Environmental Humanities</i> (Duke University Press), forthcoming.
-</div>
-
-<div class="pub">
-Ray, Kawshik. “A Comparative Reading of Bama’s <i>Karukku</i> and Baby Kamble’s <i>The Prisons We Broke</i>: A Dalit Feminist Approach.”
-<i>Contemporary Voice of Dalits</i> (SAGE).
-</div>
-
-<div class="pub">
-Ray, Kawshik. “Ecology as a Fact: ‘Rescuing’ Nature from Discourse.”
-<i>Daath Voyage</i>, 2019.
-</div>
-
-<div class="pub">
-Ray, Kawshik. “Towards an Ecological Ethics.”
-<i>Daath Voyage</i>, 2017.
-</div>
-
-<h2>Conference & Awards</h2>
-<ul>
-<li>ASLE Biennial International Conference, University of California, Davis (2019)</li>
-<li>ASLE Travel Award (2019)</li>
-<li>UGC NET Qualified for Assistant Professorship (2014)</li>
-<li>Department Excellence Grant, IIT Kanpur</li>
-</ul>
-
-<h2>Teaching</h2>
-<p>
-Business Communication; Modern Indian English Literature; Literary Theory; English Drama.
-</p>
-
-<h2>Education</h2>
-<p>
-PhD, IIT Kanpur (2015–2022)<br>
-MA, University of Calcutta<br>
-BA, Ramakrishna Mission Vidyamandira
-</p>
-
-</div>
-
-</div>
+<section>
+  <h2>Teaching</h2>
+  <p>
+    My teaching focuses on interdisciplinary engagement, encouraging students to see literature not as representation, but as participation in world-making processes.
+  </p>
+</section>
 
 <footer>
-© 2026 Kawshik Ray
+  © 2026 Ray Kawshik
 </footer>
 
 </body>
