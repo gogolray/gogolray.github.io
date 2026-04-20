@@ -33,7 +33,7 @@ nav{
     justify-content:space-between;
     align-items:center;
     padding:24px 8%;
-    background:rgba(247,245,239,0.95);
+    background:rgba(247,245,239,0.96);
     backdrop-filter:blur(8px);
     position:sticky;
     top:0;
@@ -78,8 +78,8 @@ nav{
     grid-template-columns:420px 1fr;
     gap:70px;
     align-items:center;
-    width:100%;
     max-width:1300px;
+    width:100%;
     margin:auto;
 }
 
@@ -107,7 +107,7 @@ nav{
 }
 
 .subtitle{
-    font-size:1.5rem;
+    font-size:1.45rem;
     margin-bottom:20px;
     font-weight:500;
 }
@@ -157,7 +157,7 @@ nav{
     color:white;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 .section{
     max-width:1200px;
@@ -171,7 +171,7 @@ nav{
     margin-bottom:30px;
 }
 
-/* RESEARCH CARDS */
+/* CARDS */
 
 .cards{
     display:grid;
@@ -190,10 +190,10 @@ nav{
     margin-bottom:12px;
 }
 
-/* VISUAL JOURNAL SLIDESHOW */
+/* VISUAL JOURNAL */
 
 .visual-slider{
-    max-width:700px;
+    max-width:760px;
     margin:auto;
     overflow:hidden;
     border-radius:20px;
@@ -214,23 +214,27 @@ nav{
 
 .visual-slide img{
     width:100%;
-    height:500px;
+    height:600px;
     object-fit:cover;
     display:block;
 }
 
 @keyframes visualSlide{
-
     0%{transform:translateX(0);}
-    16%{transform:translateX(0);}
+    15%{transform:translateX(0);}
+
     20%{transform:translateX(-100%);}
-    36%{transform:translateX(-100%);}
+    35%{transform:translateX(-100%);}
+
     40%{transform:translateX(-200%);}
-    56%{transform:translateX(-200%);}
+    55%{transform:translateX(-200%);}
+
     60%{transform:translateX(-300%);}
-    76%{transform:translateX(-300%);}
+    75%{transform:translateX(-300%);}
+
     80%{transform:translateX(-400%);}
-    96%{transform:translateX(-400%);}
+    95%{transform:translateX(-400%);}
+
     100%{transform:translateX(-500%);}
 }
 
@@ -272,6 +276,17 @@ footer a{
 
 @media(max-width:900px){
 
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        justify-content:center;
+        gap:18px;
+        font-size:.9rem;
+    }
+
     .hero-wrap{
         grid-template-columns:1fr;
         text-align:center;
@@ -285,19 +300,8 @@ footer a{
         justify-content:center;
     }
 
-    nav{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .nav-links{
-        justify-content:center;
-        gap:18px;
-        font-size:.9rem;
-    }
-
     .visual-slide img{
-        height:380px;
+        height:420px;
     }
 }
 </style>
@@ -348,8 +352,8 @@ footer a{
                 I work at the intersection of literary studies, environmental humanities,
                 and science studies, examining how literature participates in the making
                 of planetary realities. My research brings together Bruno Latour,
-                Actor-Network Theory, Whitehead, and contemporary planetary fiction to
-                rethink agency, temporality, climate change, and nonhuman beinghood.
+                Actor-Network Theory, Whitehead, and contemporary planetary fiction
+                to rethink agency, temporality, climate change, and nonhuman beinghood.
             </p>
 
             <div class="buttons">
@@ -377,9 +381,8 @@ footer a{
     <p>
         I am Assistant Professor of English at the Amity Institute of English
         Studies and Research, Amity University Kolkata. I completed my PhD
-        in English from the Indian Institute of Technology Kanpur with a thesis
-        titled <em>ANT-Ecocriticism in the Anthropocene: Latourian Readings of
-        Select Planetary Fiction</em>.
+        in English from the Indian Institute of Technology Kanpur with a thesis titled
+        <em>ANT-Ecocriticism in the Anthropocene: Latourian Readings of Select Planetary Fiction.</em>
 
         My work develops a framework of planetary cosmopolitics that extends
         Bruno Latour’s Earthbound into a distributed relational ontology attentive
@@ -407,7 +410,7 @@ footer a{
         <div class="card">
             <h3>Environmental Humanities</h3>
             <p>
-                Climate change, the Anthropocene, ecological ethics,
+                Climate change, Anthropocene studies, ecological ethics,
                 and planetary futures.
             </p>
         </div>
@@ -443,27 +446,27 @@ footer a{
         <div class="visual-track">
 
             <div class="visual-slide">
-                <img src="insta1.jpg" alt="">
+                <img src="insta1.jpeg" alt="">
             </div>
 
             <div class="visual-slide">
-                <img src="insta2.jpg" alt="">
+                <img src="insta2.jpeg" alt="">
             </div>
 
             <div class="visual-slide">
-                <img src="insta3.jpg" alt="">
+                <img src="insta3.jpeg" alt="">
             </div>
 
             <div class="visual-slide">
-                <img src="insta4.jpg" alt="">
+                <img src="insta4.jpeg" alt="">
             </div>
 
             <div class="visual-slide">
-                <img src="insta5.jpg" alt="">
+                <img src="insta5.jpeg" alt="">
             </div>
 
             <div class="visual-slide">
-                <img src="insta6.jpg" alt="">
+                <img src="insta6.jpeg" alt="">
             </div>
 
         </div>
@@ -495,8 +498,7 @@ footer a{
             Baby Kamble’s <em>The Prisons We Broke</em>
         </h4>
         <p>
-            <em>Contemporary Voice of Dalits</em>,
-            SAGE Publications
+            <em>Contemporary Voice of Dalits</em>, SAGE Publications
         </p>
     </div>
 
