@@ -57,7 +57,6 @@ nav {
     text-decoration: none;
     color: #222;
     font-weight: 500;
-    transition: 0.3s;
 }
 
 .nav-links a:hover {
@@ -135,7 +134,6 @@ nav {
     border-radius: 10px;
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s;
 }
 
 .primary {
@@ -143,21 +141,12 @@ nav {
     color: white;
 }
 
-.primary:hover {
-    background: #000;
-}
-
 .secondary {
     border: 1px solid #222;
     color: #222;
 }
 
-.secondary:hover {
-    background: #222;
-    color: white;
-}
-
-/* GENERAL SECTION */
+/* SECTION */
 
 .section {
     max-width: 1200px;
@@ -171,7 +160,7 @@ nav {
     margin-bottom: 30px;
 }
 
-/* RESEARCH CARDS */
+/* RESEARCH */
 
 .cards {
     display: grid;
@@ -186,80 +175,62 @@ nav {
     box-shadow: 0 10px 30px rgba(0,0,0,0.04);
 }
 
-.card h3 {
-    margin-bottom: 12px;
-}
-
-/* VISUAL JOURNAL FIXED */
+/* VISUAL JOURNAL */
 
 .visual-slider {
-    max-width: 800px;
-    height: 650px;
+    position: relative;
+    max-width: 850px;
+    height: 700px;
     margin: auto;
     overflow: hidden;
     border-radius: 20px;
-    background: #ffffff;
+    background: white;
     box-shadow: 0 15px 40px rgba(0,0,0,0.06);
-    position: relative;
 }
 
 .visual-track {
     display: flex;
-    width: 600%;
+    width: 100%;
     height: 100%;
-    animation: visualSlide 60s infinite ease-in-out;
+    transition: transform 0.6s ease;
 }
 
 .visual-slide {
-    width: 100%;
+    min-width: 100%;
     height: 100%;
-    flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #ffffff;
 }
 
 .visual-slide img {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
     object-fit: contain;
-    display: block;
     padding: 20px;
-    background: #ffffff;
 }
 
-@keyframes visualSlide {
+/* ARROWS */
 
-    0%, 14% {
-        transform: translateX(0);
-    }
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px 18px;
+    border-radius: 50%;
+    z-index: 10;
+}
 
-    16%, 30% {
-        transform: translateX(-100%);
-    }
+.prev {
+    left: 20px;
+}
 
-    32%, 46% {
-        transform: translateX(-200%);
-    }
-
-    48%, 62% {
-        transform: translateX(-300%);
-    }
-
-    64%, 78% {
-        transform: translateX(-400%);
-    }
-
-    80%, 94% {
-        transform: translateX(-500%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
+.next {
+    right: 20px;
 }
 
 /* PUBLICATIONS */
@@ -272,10 +243,6 @@ nav {
     box-shadow: 0 10px 30px rgba(0,0,0,0.04);
 }
 
-.pub h4 {
-    margin-bottom: 10px;
-}
-
 /* FOOTER */
 
 footer {
@@ -285,12 +252,6 @@ footer {
     margin-top: 100px;
 }
 
-footer h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    margin-bottom: 18px;
-}
-
 footer a {
     color: white;
     text-decoration: none;
@@ -298,19 +259,7 @@ footer a {
 
 /* MOBILE */
 
-@media(max-width: 900px) {
-
-    nav {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav-links {
-        justify-content: center;
-        gap: 18px;
-        font-size: 0.9rem;
-    }
-
+@media(max-width:900px) {
     .hero-wrap {
         grid-template-columns: 1fr;
         text-align: center;
@@ -320,12 +269,13 @@ footer a {
         font-size: 3.5rem;
     }
 
-    .buttons {
-        justify-content: center;
-    }
-
     .visual-slider {
         height: 420px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
     }
 }
 </style>
@@ -370,9 +320,7 @@ footer a {
             <p>
                 I work at the intersection of literary studies, environmental humanities,
                 and science studies, examining how literature participates in the making
-                of planetary realities. My research brings together Bruno Latour,
-                Actor-Network Theory, Whitehead, and contemporary planetary fiction
-                to rethink agency, temporality, climate change, and nonhuman beinghood.
+                of planetary realities.
             </p>
 
             <div class="buttons">
@@ -393,14 +341,9 @@ footer a {
     <h2 class="section-title">About</h2>
 
     <p>
-        I am Assistant Professor of English at the Amity Institute of English
-        Studies and Research, Amity University Kolkata. I completed my PhD
-        in English from the Indian Institute of Technology Kanpur with a thesis titled
-        <em>ANT-Ecocriticism in the Anthropocene: Latourian Readings of Select Planetary Fiction.</em>
-
-        My work develops a framework of planetary cosmopolitics that extends
-        Bruno Latour’s Earthbound into a distributed relational ontology attentive
-        to fiction, climate change, and nonhuman articulation.
+        I am Assistant Professor of English at Amity University Kolkata.
+        My research develops a framework of planetary cosmopolitics,
+        extending Bruno Latour’s Earthbound into a distributed relational ontology.
     </p>
 </section>
 
@@ -408,27 +351,10 @@ footer a {
     <h2 class="section-title">Research Areas</h2>
 
     <div class="cards">
-
-        <div class="card">
-            <h3>Planetary Cosmopolitics</h3>
-            <p>Rethinking politics beyond the human through distributed Earthbound collectives.</p>
-        </div>
-
-        <div class="card">
-            <h3>Environmental Humanities</h3>
-            <p>Climate change, Anthropocene studies, ecological ethics, and planetary futures.</p>
-        </div>
-
-        <div class="card">
-            <h3>Planetary Fiction</h3>
-            <p>Literary analysis of climate fiction and planetary narratives.</p>
-        </div>
-
-        <div class="card">
-            <h3>Visual Ethnography</h3>
-            <p>Photography as cultural reading, documentary reflection, and field knowledge.</p>
-        </div>
-
+        <div class="card">Planetary Cosmopolitics</div>
+        <div class="card">Environmental Humanities</div>
+        <div class="card">Planetary Fiction</div>
+        <div class="card">Visual Ethnography</div>
     </div>
 </section>
 
@@ -436,30 +362,34 @@ footer a {
     <h2 class="section-title">Visual Journal</h2>
 
     <div class="visual-slider">
-        <div class="visual-track">
+
+        <button class="arrow prev" onclick="prevSlide()">‹</button>
+        <button class="arrow next" onclick="nextSlide()">›</button>
+
+        <div class="visual-track" id="sliderTrack">
 
             <div class="visual-slide">
-                <img src="insta1.jpeg" alt="Visual 1">
+                <img src="insta1.jpeg" alt="">
             </div>
 
             <div class="visual-slide">
-                <img src="insta2.jpeg" alt="Visual 2">
+                <img src="insta2.jpeg" alt="">
             </div>
 
             <div class="visual-slide">
-                <img src="insta3.jpeg" alt="Visual 3">
+                <img src="insta3.jpeg" alt="">
             </div>
 
             <div class="visual-slide">
-                <img src="insta4.jpeg" alt="Visual 4">
+                <img src="insta4.jpeg" alt="">
             </div>
 
             <div class="visual-slide">
-                <img src="insta5.jpeg" alt="Visual 5">
+                <img src="insta5.jpeg" alt="">
             </div>
 
             <div class="visual-slide">
-                <img src="insta6.jpeg" alt="Visual 6">
+                <img src="insta6.jpeg" alt="">
             </div>
 
         </div>
@@ -470,38 +400,71 @@ footer a {
     <h2 class="section-title">Selected Publications</h2>
 
     <div class="pub">
-        <h4>The Emerging Political Actors in the Anthropocene: Cosmopolitics of the Earthbounds in Amitav Ghosh’s <em>Gun Island</em></h4>
-        <p><em>Environmental Humanities</em>, Duke University Press (Accepted; forthcoming)</p>
+        Environmental Humanities, Duke University Press
     </div>
 
     <div class="pub">
-        <h4>A Comparative Reading of Bama’s <em>Karukku</em> and Baby Kamble’s <em>The Prisons We Broke</em></h4>
-        <p><em>Contemporary Voice of Dalits</em>, SAGE Publications</p>
-    </div>
-
-    <div class="pub">
-        <h4>Ecology as a Fact: “Rescuing” Nature from Discourse</h4>
-        <p><em>Daath Voyage</em>, 2019</p>
+        Contemporary Voice of Dalits, SAGE Publications
     </div>
 </section>
 
 <footer id="contact">
-    <h3>Contact</h3>
+    <h2>Contact</h2>
 
     <p>Email: kray@kol.amity.edu</p>
     <p>Email: gogolray@gmail.com</p>
-    <p>Phone: +91 8960562636</p>
-    <p>Amity Institute of English Studies and Research, Amity University Kolkata</p>
-
-    <br>
 
     <p>
-        <a href="https://orcid.org/0000-0001-6723-7561" target="_blank">ORCID</a> |
-        <a href="https://scholar.google.com/citations?user=sSU0UMgAAAAJ&hl=en" target="_blank">Google Scholar</a> |
-        <a href="https://www.researchgate.net/profile/Kawshik-Ray" target="_blank">ResearchGate</a> |
-        <a href="https://www.instagram.com/raykawshik/" target="_blank">Instagram</a>
+        <a href="https://orcid.org/0000-0001-6723-7561">ORCID</a> |
+        <a href="https://scholar.google.com/">Google Scholar</a> |
+        <a href="https://www.instagram.com/raykawshik/">Instagram</a>
     </p>
 </footer>
+
+<script>
+let currentSlide = 0;
+const track = document.getElementById("sliderTrack");
+const totalSlides = 6;
+
+function updateSlide() {
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlide();
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlide();
+}
+
+/* Auto slide every 30 seconds */
+
+setInterval(nextSlide, 30000);
+
+/* Swipe support */
+
+let startX = 0;
+let endX = 0;
+
+track.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+track.addEventListener("touchend", e => {
+    endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) {
+        nextSlide();
+    }
+
+    if (endX - startX > 50) {
+        prevSlide();
+    }
+});
+</script>
 
 </body>
 </html>
