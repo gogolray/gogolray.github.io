@@ -50,6 +50,7 @@ nav{
 .nav-links{
     display:flex;
     gap:30px;
+    flex-wrap:wrap;
 }
 
 .nav-links a{
@@ -156,7 +157,7 @@ nav{
     color:white;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
     max-width:1200px;
@@ -170,7 +171,7 @@ nav{
     margin-bottom:30px;
 }
 
-/* GRID CARDS */
+/* RESEARCH CARDS */
 
 .cards{
     display:grid;
@@ -189,20 +190,48 @@ nav{
     margin-bottom:12px;
 }
 
-/* INSTAGRAM GRID */
+/* VISUAL JOURNAL SLIDESHOW */
 
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+.visual-slider{
+    max-width:700px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:20px;
+    background:white;
+    box-shadow:0 15px 40px rgba(0,0,0,0.06);
 }
 
-.gallery img{
+.visual-track{
+    display:flex;
+    width:600%;
+    animation:visualSlide 24s infinite;
+}
+
+.visual-slide{
     width:100%;
-    height:300px;
+    flex-shrink:0;
+}
+
+.visual-slide img{
+    width:100%;
+    height:500px;
     object-fit:cover;
-    border-radius:16px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    display:block;
+}
+
+@keyframes visualSlide{
+
+    0%{transform:translateX(0);}
+    16%{transform:translateX(0);}
+    20%{transform:translateX(-100%);}
+    36%{transform:translateX(-100%);}
+    40%{transform:translateX(-200%);}
+    56%{transform:translateX(-200%);}
+    60%{transform:translateX(-300%);}
+    76%{transform:translateX(-300%);}
+    80%{transform:translateX(-400%);}
+    96%{transform:translateX(-400%);}
+    100%{transform:translateX(-500%);}
 }
 
 /* PUBLICATIONS */
@@ -256,14 +285,23 @@ footer a{
         justify-content:center;
     }
 
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
     .nav-links{
+        justify-content:center;
         gap:18px;
         font-size:.9rem;
+    }
+
+    .visual-slide img{
+        height:380px;
     }
 }
 </style>
 </head>
-
 <body>
 
 <!-- NAVBAR -->
@@ -293,13 +331,13 @@ footer a{
         <div>
 
             <div class="mini">
-                Assistant Professor • Researcher • Visual Ethnographer
+                Assistant Professor of English • Researcher • Visual Ethnographer
             </div>
 
             <h1>Ray Kawshik</h1>
 
             <div class="subtitle">
-                Literature • Planetary Cosmopolitics • Nonhuman Thought
+                Environmental Humanities • Planetary Cosmopolitics • Literary Theory
             </div>
 
             <div class="statement">
@@ -307,12 +345,11 @@ footer a{
             </div>
 
             <p>
-                I work at the intersection of literary studies,
-                environmental humanities, and science studies.
-                My research explores how literature participates
-                in the making of planetary realities through
-                Bruno Latour, Actor-Network Theory, posthumanism,
-                and contemporary planetary fiction.
+                I work at the intersection of literary studies, environmental humanities,
+                and science studies, examining how literature participates in the making
+                of planetary realities. My research brings together Bruno Latour,
+                Actor-Network Theory, Whitehead, and contemporary planetary fiction to
+                rethink agency, temporality, climate change, and nonhuman beinghood.
             </p>
 
             <div class="buttons">
@@ -338,16 +375,15 @@ footer a{
     <h2 class="section-title">About</h2>
 
     <p>
-        I am Assistant Professor of English at Amity Institute of English
+        I am Assistant Professor of English at the Amity Institute of English
         Studies and Research, Amity University Kolkata. I completed my PhD
-        from IIT Kanpur with a thesis titled
-        <em>ANT-Ecocriticism in the Anthropocene:
-        Latourian Readings of Select Planetary Fiction.</em>
+        in English from the Indian Institute of Technology Kanpur with a thesis
+        titled <em>ANT-Ecocriticism in the Anthropocene: Latourian Readings of
+        Select Planetary Fiction</em>.
 
-        My work develops a framework of planetary cosmopolitics
-        that extends Bruno Latour’s Earthbound into a distributed
-        relational ontology attentive to fiction, climate change,
-        and nonhuman articulation.
+        My work develops a framework of planetary cosmopolitics that extends
+        Bruno Latour’s Earthbound into a distributed relational ontology attentive
+        to fiction, climate change, and nonhuman articulation.
     </p>
 
 </section>
@@ -363,32 +399,32 @@ footer a{
         <div class="card">
             <h3>Planetary Cosmopolitics</h3>
             <p>
-                Rethinking politics beyond the human through
-                distributed Earthbound collectives.
+                Rethinking politics beyond the human through distributed
+                Earthbound collectives and cosmopolitical relations.
             </p>
         </div>
 
         <div class="card">
             <h3>Environmental Humanities</h3>
             <p>
-                Climate change, Anthropocene studies,
-                and ecological ethics.
+                Climate change, the Anthropocene, ecological ethics,
+                and planetary futures.
             </p>
         </div>
 
         <div class="card">
             <h3>Planetary Fiction</h3>
             <p>
-                Literature as cosmopolitical thought and
-                world-making.
+                Literary analysis of climate fiction and planetary narratives
+                through Latourian and posthuman frameworks.
             </p>
         </div>
 
         <div class="card">
             <h3>Visual Ethnography</h3>
             <p>
-                Documentary photography as a mode of
-                cultural reading and field knowledge.
+                Photography as a mode of cultural reading,
+                field knowledge, and documentary reflection.
             </p>
         </div>
 
@@ -402,14 +438,35 @@ footer a{
 
     <h2 class="section-title">Visual Journal</h2>
 
-    <div class="gallery">
+    <div class="visual-slider">
 
-        <img src="insta1.jpg" alt="">
-        <img src="insta2.jpg" alt="">
-        <img src="insta3.jpg" alt="">
-        <img src="insta4.jpg" alt="">
-        <img src="insta5.jpg" alt="">
-        <img src="insta6.jpg" alt="">
+        <div class="visual-track">
+
+            <div class="visual-slide">
+                <img src="insta1.jpg" alt="">
+            </div>
+
+            <div class="visual-slide">
+                <img src="insta2.jpg" alt="">
+            </div>
+
+            <div class="visual-slide">
+                <img src="insta3.jpg" alt="">
+            </div>
+
+            <div class="visual-slide">
+                <img src="insta4.jpg" alt="">
+            </div>
+
+            <div class="visual-slide">
+                <img src="insta5.jpg" alt="">
+            </div>
+
+            <div class="visual-slide">
+                <img src="insta6.jpg" alt="">
+            </div>
+
+        </div>
 
     </div>
 
@@ -424,32 +481,31 @@ footer a{
     <div class="pub">
         <h4>
             The Emerging Political Actors in the Anthropocene:
-            Cosmopolitics of the Earthbounds in Amitav Ghosh’s
-            <em>Gun Island</em>
+            Cosmopolitics of the Earthbounds in Amitav Ghosh’s <em>Gun Island</em>
         </h4>
         <p>
-            Environmental Humanities, Duke University Press
-            (Accepted; forthcoming)
+            <em>Environmental Humanities</em>, Duke University Press
+            (Accepted; forthcoming, Q1 Scopus Indexed)
         </p>
     </div>
 
     <div class="pub">
         <h4>
-            A Comparative Reading of Bama’s <em>Karukku</em>
-            and Baby Kamble’s <em>The Prisons We Broke</em>
+            A Comparative Reading of Bama’s <em>Karukku</em> and
+            Baby Kamble’s <em>The Prisons We Broke</em>
         </h4>
         <p>
-            Contemporary Voice of Dalits,
+            <em>Contemporary Voice of Dalits</em>,
             SAGE Publications
         </p>
     </div>
 
     <div class="pub">
         <h4>
-            Ecology as a Fact: Rescuing Nature from Discourse
+            Ecology as a Fact: “Rescuing” Nature from Discourse
         </h4>
         <p>
-            Daath Voyage, 2019
+            <em>Daath Voyage</em>, 2019
         </p>
     </div>
 
@@ -464,7 +520,8 @@ footer a{
     <p>Email: kray@kol.amity.edu</p>
     <p>Email: gogolray@gmail.com</p>
     <p>Phone: +91 8960562636</p>
-    <p>Amity University Kolkata, West Bengal, India</p>
+    <p>Amity Institute of English Studies and Research, Amity University Kolkata</p>
+    <p>PhD, Indian Institute of Technology Kanpur</p>
 
     <br>
 
@@ -472,6 +529,8 @@ footer a{
         <a href="https://orcid.org/0000-0001-6723-7561" target="_blank">ORCID</a> |
         <a href="https://scholar.google.com/citations?user=sSU0UMgAAAAJ&hl=en" target="_blank">Google Scholar</a> |
         <a href="https://www.researchgate.net/profile/Kawshik-Ray" target="_blank">ResearchGate</a> |
+        <a href="https://www.academia.edu/" target="_blank">Academia.edu</a> |
+        <a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a> |
         <a href="https://www.instagram.com/raykawshik/" target="_blank">Instagram</a>
     </p>
 
