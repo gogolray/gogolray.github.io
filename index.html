@@ -5,18 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kawshik Ray | Assistant Professor of English</title>
 <meta name="description" content="Kawshik Ray — scholar of Environmental Humanities, Planetary Cosmopolitics, and Literary Theory. Assistant Professor at Amity University Kolkata.">
+<meta name="theme-color" content="#161310">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-/* ── VARIABLES ─────────────────────────────── */
+/* ═══════════════════════════════════════
+   VARIABLES
+═══════════════════════════════════════ */
 :root {
   --ink:       #0D0C0A;
   --paper:     #F6F2E9;
   --cream:     #EDE8D8;
-  --warm:      #E8E0CC;
   --gold:      #A07830;
   --gold-lt:   #C49A48;
   --muted:     #6B6052;
@@ -27,443 +29,498 @@
   --body:      'Source Serif 4', Georgia, serif;
   --mono:      'DM Mono', monospace;
   --max:       1280px;
-  --pad:       clamp(24px, 6vw, 80px);
+  --r:         8px;
 }
 
-/* ── RESET ─────────────────────────────────── */
+/* ═══════════════════════════════════════
+   RESET  (mobile-first)
+═══════════════════════════════════════ */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; font-size:16px; }
-
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
 body {
   font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.75;
   background: var(--paper);
   color: var(--ink);
-  line-height: 1.75;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  overflow-x: hidden;
+}
+img { max-width:100%; display:block; }
+a   { color:inherit; text-decoration:none; }
+ul  { list-style:none; }
+h1,h2,h3,h4 {
+  font-family: var(--serif);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-img { max-width:100%; display:block; }
-a { color: inherit; text-decoration: none; }
+/* ═══════════════════════════════════════
+   UTILITIES
+═══════════════════════════════════════ */
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (min-width:600px)  { .wrap { padding: 0 32px; } }
+@media (min-width:1024px) { .wrap { padding: 0 56px; } }
 
-/* ── TYPOGRAPHY ────────────────────────────── */
-h1,h2,h3,h4 { font-family: var(--serif); font-weight:300; line-height:1.1; letter-spacing:-0.02em; }
-
-/* ── UTILITIES ─────────────────────────────── */
-.container { max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
 .label {
   font-family: var(--mono);
-  font-size: .72rem;
+  font-size: .7rem;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--gold);
+  display: block;
+  margin-bottom: 2px;
 }
-.rule { border:none; border-top:1px solid var(--rule); }
 
-/* ── NAV ───────────────────────────────────── */
+/* ═══════════════════════════════════════
+   NAV
+═══════════════════════════════════════ */
 nav {
   position: sticky;
   top: 0;
-  z-index: 900;
-  background: rgba(246,242,233,0.94);
+  z-index: 999;
+  background: rgba(246,242,233,0.96);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--rule);
 }
-.nav-inner {
+.nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px var(--pad);
-  max-width: var(--max);
-  margin: 0 auto;
-  gap: 24px;
+  height: 60px;
+  padding: 0 20px;
 }
+@media (min-width:600px)  { .nav-bar { padding: 0 32px; } }
+@media (min-width:1024px) { .nav-bar { padding: 0 56px; height: 68px; } }
+
 .nav-logo {
   font-family: var(--serif);
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 300;
-  white-space: nowrap;
 }
 .nav-logo span { color: var(--gold); }
-.nav-links {
-  display: flex;
-  gap: 28px;
-  list-style: none;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-.nav-links a {
-  font-family: var(--mono);
-  font-size: .72rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  transition: color .2s;
-}
-.nav-links a:hover { color: var(--ink); }
 
-/* ── HERO ──────────────────────────────────── */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 92vh;
-}
-.hero-panel {
-  background: var(--panel);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 60px var(--pad) 60px clamp(24px,6vw,80px);
-  position: relative;
-  overflow: hidden;
-}
-.hero-panel::before {
-  content:'';
-  position:absolute;
-  inset:0;
-  background: radial-gradient(ellipse at 30% 60%, rgba(160,120,48,0.12) 0%, transparent 70%);
-}
-.hero-panel-img {
-  position: absolute;
-  inset: 0;
-  background: var(--panel-mid);
-}
-.hero-panel-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.45;
-}
-.hero-text {
-  position: relative;
-  z-index: 2;
-  color: var(--paper);
-}
-.hero-text .label { color: var(--gold-lt); margin-bottom: 20px; }
-.hero-name {
-  font-size: clamp(3.5rem, 6vw, 6.5rem);
-  color: #fff;
-  line-height: 0.95;
-  margin-bottom: 24px;
-}
-.hero-name em {
-  font-style: italic;
-  color: var(--gold-lt);
-}
-.hero-role {
-  font-family: var(--body);
-  font-size: 1rem;
-  color: rgba(246,242,233,0.65);
-  margin-bottom: 8px;
-  font-weight: 300;
-}
-.hero-affil {
-  font-family: var(--body);
-  font-size: .9rem;
-  color: rgba(246,242,233,0.45);
-  font-weight: 300;
-}
-.hero-quote-panel {
+/* Hamburger */
+.nav-toggle {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px clamp(32px,5vw,80px);
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+}
+.nav-toggle span {
+  display: block;
+  height: 1.5px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+  transform-origin: center;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile drawer */
+.nav-drawer {
+  display: none;
+  flex-direction: column;
+  background: rgba(246,242,233,0.98);
+  border-top: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+.nav-drawer.open { display: flex; }
+.nav-drawer a {
+  font-family: var(--mono);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--rule);
+  transition: background .15s;
+}
+.nav-drawer a:last-child { border-bottom: none; }
+.nav-drawer a:active { background: var(--cream); color: var(--ink); }
+
+/* Desktop inline */
+.nav-links-desktop { display: none; }
+@media (min-width:900px) {
+  .nav-toggle        { display: none; }
+  .nav-drawer        { display: none !important; }
+  .nav-links-desktop {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+  }
+  .nav-links-desktop a {
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color .2s;
+    white-space: nowrap;
+  }
+  .nav-links-desktop a:hover { color: var(--ink); }
+}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero { display: flex; flex-direction: column; }
+
+.hero-image {
+  position: relative;
+  height: 72vw;
+  max-height: 440px;
+  min-height: 260px;
+  background: var(--panel-mid);
+  overflow: hidden;
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0.5;
+}
+.hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 35%, rgba(22,19,16,0.88) 100%);
+  z-index: 1;
+}
+.hero-name-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+  color: #fff;
+}
+.hero-name-overlay .label { color: var(--gold-lt); margin-bottom: 8px; }
+.hero-name-overlay h1 {
+  font-size: clamp(2.6rem, 9vw, 5rem);
+  color: #fff;
+  line-height: 0.92;
+}
+.hero-name-overlay h1 em { font-style: italic; color: var(--gold-lt); }
+
+.hero-content {
   background: var(--cream);
+  padding: 36px 20px 52px;
+}
+@media (min-width:600px) { .hero-content { padding: 44px 32px 60px; } }
+
+.hero-sub {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+.hero-affil {
+  font-size: .875rem;
+  color: var(--muted);
+  margin-bottom: 28px;
+  line-height: 1.5;
 }
 .hero-quote {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 3vw, 2.6rem);
-  font-weight: 300;
+  font-size: clamp(1.35rem, 5vw, 2.2rem);
   font-style: italic;
+  font-weight: 300;
   line-height: 1.35;
   color: var(--ink);
-  margin-bottom: 32px;
-  max-width: 520px;
+  margin-bottom: 20px;
+  max-width: 580px;
 }
 .hero-bio {
-  font-size: 1rem;
+  font-size: .95rem;
   color: var(--muted);
   line-height: 1.85;
-  max-width: 480px;
-  margin-bottom: 40px;
+  max-width: 580px;
+  margin-bottom: 32px;
 }
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+@media (min-width:900px) {
+  .hero { flex-direction: row; min-height: 90vh; }
+  .hero-image {
+    flex: 0 0 44%;
+    height: auto;
+    max-height: none;
+    min-height: 0;
+  }
+  .hero-name-overlay { bottom: 40px; left: 40px; right: 40px; }
+  .hero-name-overlay h1 { font-size: clamp(3.5rem, 5vw, 5.8rem); }
+  .hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 48px;
+  }
+}
+
+/* ═══════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════ */
 .btn {
   font-family: var(--mono);
   font-size: .72rem;
   letter-spacing: .1em;
   text-transform: uppercase;
-  padding: 13px 24px;
+  padding: 14px 22px;
   border-radius: 4px;
-  transition: all .2s;
   cursor: pointer;
-  display: inline-block;
+  transition: all .2s;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
 }
-.btn-dark {
-  background: var(--ink);
-  color: var(--paper);
-  border: 1px solid var(--ink);
+.btn-dark { background: var(--ink); color: var(--paper); border: 1px solid var(--ink); }
+.btn-outline { border: 1px solid rgba(13,12,10,0.28); color: var(--muted); }
+@media (hover:hover) {
+  .btn-dark:hover { background: var(--panel); }
+  .btn-outline:hover { border-color: var(--ink); color: var(--ink); }
 }
-.btn-dark:hover { background: var(--panel); }
-.btn-outline {
-  border: 1px solid rgba(13,12,10,0.25);
-  color: var(--muted);
-}
-.btn-outline:hover { border-color: var(--ink); color: var(--ink); }
 
-/* ── NEWS BAND ─────────────────────────────── */
-.news-band {
-  background: var(--gold);
-  padding: 0 var(--pad);
-  overflow: hidden;
-}
-.news-inner {
-  display: flex;
-  align-items: stretch;
-  max-width: var(--max);
-  margin: 0 auto;
-}
+/* ═══════════════════════════════════════
+   NEWS BAND
+═══════════════════════════════════════ */
+.news-band { background: var(--gold); padding: 16px 20px; }
+@media (min-width:600px) { .news-band { padding: 0 32px; } }
+@media (min-width:1024px){ .news-band { padding: 0 56px; } }
+
+.news-inner { max-width: var(--max); margin: 0 auto; }
 .news-label {
   font-family: var(--mono);
-  font-size: .68rem;
+  font-size: .65rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
-  padding: 18px 28px 18px 0;
-  border-right: 1px solid rgba(255,255,255,0.25);
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  margin-right: 28px;
-  flex-shrink: 0;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 6px;
 }
 .news-text {
   font-family: var(--body);
   font-size: .9rem;
   color: #fff;
-  padding: 16px 0;
-  display: flex;
-  align-items: center;
+  line-height: 1.65;
 }
 .news-text strong { font-weight: 500; }
 
-/* ── SECTION BASE ──────────────────────────── */
-.section {
-  padding: 96px 0;
-}
-.section-alt { background: var(--cream); }
-.section-dark {
-  background: var(--panel);
-  color: var(--paper);
+@media (min-width:600px) {
+  .news-inner {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+  }
+  .news-label {
+    flex-shrink: 0;
+    margin-bottom: 0;
+    margin-right: 28px;
+    padding-right: 28px;
+    border-right: 1px solid rgba(255,255,255,0.25);
+  }
 }
 
-.section-header {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 56px;
-}
-.section-title {
-  font-size: clamp(2.2rem, 4vw, 3.8rem);
-}
+/* ═══════════════════════════════════════
+   SECTION BASE
+═══════════════════════════════════════ */
+.section { padding: 64px 0; }
+.section-alt  { background: var(--cream); }
+.section-dark { background: var(--panel); color: var(--paper); }
+@media (min-width:768px)  { .section { padding: 84px 0; } }
+@media (min-width:1024px) { .section { padding: 104px 0; } }
+
+.section-header { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; }
+@media (min-width:768px) { .section-header { margin-bottom: 52px; } }
+
+.section-title { font-size: clamp(1.9rem, 6vw, 3.6rem); }
 .section-lead {
-  font-size: 1.05rem;
+  font-size: .95rem;
   color: var(--muted);
-  max-width: 620px;
+  max-width: 600px;
   line-height: 1.8;
 }
-.section-dark .section-lead { color: rgba(246,242,233,0.55); }
+@media (min-width:768px) { .section-lead { font-size: 1.05rem; } }
+.section-dark .section-lead { color: rgba(246,242,233,0.5); }
 
-/* ── ABOUT ─────────────────────────────────── */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: start;
+/* ═══════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════ */
+.about-grid { display: flex; flex-direction: column; gap: 36px; }
+@media (min-width:900px) {
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
 }
-.about-body {
-  font-size: 1.05rem;
-  line-height: 1.9;
-  color: var(--ink);
-}
-.about-body p + p { margin-top: 20px; }
+.about-body { font-size: 1rem; line-height: 1.9; }
+.about-body p + p { margin-top: 18px; }
 .about-body em { font-style: italic; }
-.about-meta { display: flex; flex-direction: column; gap: 28px; }
+.about-meta { display: flex; flex-direction: column; gap: 14px; }
+
 .meta-item {
-  padding: 24px 28px;
+  padding: 20px 22px;
   background: var(--cream);
-  border-radius: 6px;
+  border-radius: var(--r);
   border-left: 3px solid var(--gold);
 }
-.meta-item .label { margin-bottom: 8px; }
-.meta-item h4 {
-  font-family: var(--body);
-  font-size: .95rem;
-  font-weight: 500;
-  color: var(--ink);
-  line-height: 1.5;
-}
-.meta-item p {
-  font-size: .875rem;
-  color: var(--muted);
-  margin-top: 4px;
-}
+.section-alt .meta-item { background: var(--paper); }
+.meta-item .label { margin-bottom: 6px; }
+.meta-item h4 { font-family: var(--body); font-size: .95rem; font-weight: 500; line-height: 1.5; }
+.meta-item p  { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+.meta-item a  { color: var(--gold); }
 
-/* ── RESEARCH ──────────────────────────────── */
+/* ═══════════════════════════════════════
+   RESEARCH
+═══════════════════════════════════════ */
 .research-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2px;
 }
+@media (min-width:580px)  { .research-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width:1024px) { .research-grid { grid-template-columns: repeat(3,1fr); } }
+
 .research-card {
   background: var(--panel-mid);
-  padding: 36px 32px;
+  padding: 28px 22px;
   transition: background .2s;
 }
-.research-card:hover { background: #2a2420; }
-.research-card .label { margin-bottom: 16px; color: var(--gold-lt); }
-.research-card h3 {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  color: #fff;
-  margin-bottom: 14px;
-  font-weight: 300;
-}
-.research-card p {
-  font-size: .9rem;
-  color: rgba(246,242,233,0.5);
-  line-height: 1.75;
-}
+@media (min-width:768px) { .research-card { padding: 36px 32px; } }
+@media (hover:hover) { .research-card:hover { background: #2a2420; } }
+.research-card .label { margin-bottom: 14px; color: var(--gold-lt); }
+.research-card h3 { font-size: clamp(1.05rem, 3vw, 1.35rem); color: #fff; margin-bottom: 12px; }
+.research-card p  { font-size: .875rem; color: rgba(246,242,233,0.5); line-height: 1.75; }
 
-/* ── PUBLICATIONS ──────────────────────────── */
-.pub-list { display: flex; flex-direction: column; gap: 0; }
+/* ═══════════════════════════════════════
+   PUBLICATIONS
+═══════════════════════════════════════ */
+.pub-list { display: flex; flex-direction: column; }
+
+/* Mobile: stacked */
 .pub-item {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 0 28px;
-  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 24px 0;
   border-bottom: 1px solid var(--rule);
-  align-items: start;
 }
 .pub-item:first-child { border-top: 1px solid var(--rule); }
-.pub-year {
-  font-family: var(--mono);
-  font-size: .8rem;
-  color: var(--gold);
-  padding-top: 4px;
+
+/* Desktop: two-col year + content */
+@media (min-width:640px) {
+  .pub-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 0 24px;
+    align-items: start;
+    padding: 28px 0;
+  }
 }
-.pub-body .pub-title {
+
+.pub-year { font-family: var(--mono); font-size: .72rem; color: var(--gold); padding-top: 2px; }
+.pub-content { display: flex; flex-direction: column; gap: 4px; }
+.pub-title {
   font-family: var(--serif);
-  font-size: 1.15rem;
+  font-size: clamp(.95rem, 2.5vw, 1.1rem);
   font-weight: 300;
-  line-height: 1.45;
-  margin-bottom: 8px;
+  line-height: 1.5;
 }
-.pub-body .pub-title em { font-style: italic; }
-.pub-body .pub-journal {
-  font-size: .875rem;
-  color: var(--muted);
-}
-.pub-body .pub-journal em { font-style: italic; }
+.pub-title em { font-style: italic; }
+.pub-journal  { font-size: .875rem; color: var(--muted); line-height: 1.5; }
+.pub-journal em { font-style: italic; }
+.pub-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
 .pub-badge {
-  display: inline-block;
-  margin-top: 8px;
   font-family: var(--mono);
-  font-size: .62rem;
-  letter-spacing: .1em;
+  font-size: .6rem;
+  letter-spacing: .08em;
   text-transform: uppercase;
   background: var(--gold);
   color: #fff;
-  padding: 3px 9px;
+  padding: 4px 10px;
   border-radius: 3px;
+  display: inline-block;
+  min-height: 26px;
+  display: inline-flex;
+  align-items: center;
 }
 .pub-badge.forthcoming { background: var(--panel); }
-.pub-badge.q1 { background: #2d5a3d; }
+.pub-badge.q1          { background: #2d5a3d; }
 
-/* ── WORKING PAPERS ────────────────────────── */
-.wip-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-.wip-card {
-  background: white;
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 28px;
-  transition: box-shadow .2s, transform .15s;
-}
-.wip-card:hover {
-  box-shadow: 0 8px 28px rgba(0,0,0,0.07);
-  transform: translateY(-2px);
-}
-.wip-card .label { margin-bottom: 12px; }
-.wip-card h4 {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 300;
-  line-height: 1.45;
-  margin-bottom: 10px;
-}
-.wip-card .wip-target {
-  font-size: .8rem;
-  color: var(--muted);
-  font-style: italic;
-}
-
-/* ── TEACHING ──────────────────────────────── */
+/* ═══════════════════════════════════════
+   TEACHING
+═══════════════════════════════════════ */
 .teaching-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 14px;
 }
+@media (min-width:580px)  { .teaching-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width:1024px) { .teaching-grid { grid-template-columns: repeat(3,1fr); } }
+
 .teaching-card {
   background: var(--paper);
   border: 1px solid var(--rule);
-  border-radius: 6px;
-  padding: 30px;
+  border-radius: var(--r);
+  padding: 22px;
 }
-.teaching-card .label { margin-bottom: 12px; }
-.teaching-card h3 {
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  font-weight: 300;
-}
-.teaching-card p {
-  font-size: .875rem;
-  color: var(--muted);
-  line-height: 1.75;
-}
+@media (min-width:768px) { .teaching-card { padding: 28px; } }
+.teaching-card .label { margin-bottom: 10px; }
+.teaching-card h3 { font-size: clamp(1rem, 2.5vw, 1.15rem); margin-bottom: 10px; }
+.teaching-card p  { font-size: .875rem; color: var(--muted); line-height: 1.75; }
 
-/* ── VISUAL JOURNAL ────────────────────────── */
+/* ═══════════════════════════════════════
+   VISUAL JOURNAL — SLIDER
+═══════════════════════════════════════ */
 .slider-wrap {
   position: relative;
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  border-radius: 8px;
+  border-radius: var(--r);
   overflow: hidden;
-  background: var(--panel);
-  aspect-ratio: 4/3;
+  background: #0a0807;
+  aspect-ratio: 1/1;       /* square on mobile */
 }
+@media (min-width:600px) { .slider-wrap { aspect-ratio: 4/3; } }
+
 .slider-track {
   display: flex;
+  width: 100%;
   height: 100%;
-  transition: transform .55s cubic-bezier(.4,0,.2,1);
+  transition: transform .5s cubic-bezier(.4,0,.2,1);
 }
 .slider-slide {
-  min-width: 100%;
+  flex: 0 0 100%;
+  width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--panel);
+  background: #0a0807;
 }
 .slider-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
+
 .slider-btn {
   position: absolute;
   top: 50%;
@@ -471,10 +528,10 @@ nav {
   background: rgba(22,19,16,0.6);
   border: 1px solid rgba(255,255,255,0.15);
   color: #fff;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -482,171 +539,171 @@ nav {
   z-index: 10;
   transition: background .2s;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
-.slider-btn:hover { background: rgba(22,19,16,0.9); }
-.slider-btn.prev { left: 16px; }
-.slider-btn.next { right: 16px; }
+.slider-btn.prev { left: 12px; }
+.slider-btn.next { right: 12px; }
+@media (hover:hover) { .slider-btn:hover { background: rgba(22,19,16,0.9); } }
+
 .slider-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   margin-top: 20px;
 }
 .slider-dot {
-  width: 6px;
-  height: 6px;
+  position: relative;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--rule);
   border: 1px solid var(--muted);
+  background: transparent;
   cursor: pointer;
+  padding: 0;
   transition: background .2s, transform .2s;
 }
-.slider-dot.active {
-  background: var(--gold);
-  border-color: var(--gold);
-  transform: scale(1.3);
-}
+.slider-dot::before { content:''; position:absolute; inset:-10px; } /* bigger tap target */
+.slider-dot.active { background: var(--gold); border-color: var(--gold); transform: scale(1.25); }
 
-/* ── AWARDS ────────────────────────────────── */
+/* ═══════════════════════════════════════
+   AWARDS
+═══════════════════════════════════════ */
 .awards-list { display: flex; flex-direction: column; }
+
 .award-item {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 0 28px;
-  padding: 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 22px 0;
   border-bottom: 1px solid rgba(246,242,233,0.1);
-  align-items: start;
 }
-.award-year {
-  font-family: var(--mono);
-  font-size: .78rem;
-  color: var(--gold-lt);
-  padding-top: 4px;
-}
-.award-body h4 {
-  font-family: var(--body);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--paper);
-  margin-bottom: 4px;
-}
-.award-body p {
-  font-size: .875rem;
-  color: rgba(246,242,233,0.45);
+.award-item:first-child { border-top: 1px solid rgba(246,242,233,0.1); }
+@media (min-width:560px) {
+  .award-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 24px;
+    align-items: start;
+    padding: 26px 0;
+  }
 }
 
-/* ── PROFILES ──────────────────────────────── */
+.award-year { font-family: var(--mono); font-size: .75rem; color: var(--gold-lt); padding-top: 3px; }
+.award-body h4 { font-family: var(--body); font-size: .95rem; font-weight: 500; color: var(--paper); margin-bottom: 3px; }
+.award-body p  { font-size: .875rem; color: rgba(246,242,233,0.45); line-height: 1.6; }
+
+/* ═══════════════════════════════════════
+   PROFILES
+═══════════════════════════════════════ */
 .profiles {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 40px;
 }
+@media (min-width:500px) {
+  .profiles { grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); }
+}
+
 .profile-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
   font-family: var(--mono);
-  font-size: .7rem;
+  font-size: .68rem;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--paper);
   border: 1px solid rgba(246,242,233,0.2);
-  padding: 10px 16px;
+  padding: 14px 12px;
   border-radius: 4px;
+  text-align: center;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: border-color .2s, background .2s;
 }
-.profile-link:hover {
-  border-color: var(--gold-lt);
-  background: rgba(196,154,72,0.08);
+@media (hover:hover) {
+  .profile-link:hover { border-color: var(--gold-lt); background: rgba(196,154,72,0.08); }
 }
 
-/* ── FOOTER ────────────────────────────────── */
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
 footer {
   background: var(--ink);
   color: rgba(246,242,233,0.6);
-  padding: 64px var(--pad) 40px;
+  padding: 52px 20px 32px;
 }
+@media (min-width:600px)  { footer { padding: 60px 32px 36px; } }
+@media (min-width:1024px) { footer { padding: 72px 56px 44px; } }
+
 .footer-inner {
   max-width: var(--max);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  padding-bottom: 48px;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding-bottom: 36px;
   border-bottom: 1px solid rgba(246,242,233,0.08);
 }
-.footer-brand h3 {
-  font-family: var(--serif);
-  font-size: 1.8rem;
-  color: var(--paper);
-  margin-bottom: 8px;
-  font-weight: 300;
-}
-.footer-brand p {
-  font-size: .875rem;
-  line-height: 1.7;
-}
+@media (min-width:640px)  { .footer-inner { grid-template-columns: 1fr 1fr; } }
+@media (min-width:960px)  { .footer-inner { grid-template-columns: 1.4fr 1fr 1fr; } }
+
+.footer-brand h3 { font-family: var(--serif); font-size: 1.7rem; color: var(--paper); margin-bottom: 10px; font-weight: 300; }
+.footer-brand p  { font-size: .875rem; line-height: 1.75; }
+
 .footer-col h5 {
   font-family: var(--mono);
-  font-size: .68rem;
+  font-size: .65rem;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--gold-lt);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
-.footer-col p, .footer-col a {
-  font-size: .875rem;
-  line-height: 1.9;
-  display: block;
-}
-.footer-col a:hover { color: var(--paper); }
+.footer-col p,
+.footer-col a { font-size: .875rem; line-height: 1.9; display: block; }
+@media (hover:hover) { .footer-col a:hover { color: var(--paper); } }
+
 .footer-bottom {
   max-width: var(--max);
-  margin: 28px auto 0;
+  margin: 24px auto 0;
   font-family: var(--mono);
-  font-size: .66rem;
-  letter-spacing: .08em;
-  color: rgba(246,242,233,0.25);
+  font-size: .62rem;
+  letter-spacing: .06em;
+  color: rgba(246,242,233,0.22);
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 4px;
+}
+@media (min-width:600px) {
+  .footer-bottom { flex-direction: row; justify-content: space-between; }
 }
 
-/* ── ANIMATIONS ────────────────────────────── */
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(24px); }
-  to   { opacity:1; transform:translateY(0); }
+/* ═══════════════════════════════════════
+   SCROLL ANIMATIONS
+═══════════════════════════════════════ */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(20px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .anim { opacity:0; }
+  .anim.visible { animation: fadeUp .6s ease forwards; }
 }
-.anim { opacity:0; }
-.anim.visible { animation: fadeUp .65s ease forwards; }
-
-/* ── RESPONSIVE ────────────────────────────── */
-@media (max-width: 960px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-panel { min-height: 60vw; padding-bottom: 48px; }
-  .hero-quote-panel { padding: 56px var(--pad); }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .footer-inner { grid-template-columns: 1fr; gap: 28px; }
-  .award-item { grid-template-columns: 90px 1fr; }
-}
-@media (max-width: 680px) {
-  .nav-links { gap: 14px; }
-  .pub-item { grid-template-columns: 1fr; gap: 8px; }
-  .pub-year { font-size: .75rem; }
-  .hero-name { font-size: 3rem; }
-  .footer-inner { grid-template-columns: 1fr; }
-}
+@media (prefers-reduced-motion: reduce) { .anim { opacity:1; } }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ─────────────────────────────── -->
+<!-- ══════ NAV ══════ -->
 <nav>
-  <div class="nav-inner">
+  <div class="nav-bar">
     <div class="nav-logo">Kawshik <span>Ray</span></div>
-    <ul class="nav-links">
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links-desktop">
       <li><a href="#about">About</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#publications">Publications</a></li>
@@ -656,25 +713,32 @@ footer {
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
+
+  <nav class="nav-drawer" id="navDrawer" aria-label="Mobile navigation">
+    <a href="#about"        onclick="closeNav()">About</a>
+    <a href="#research"     onclick="closeNav()">Research</a>
+    <a href="#publications" onclick="closeNav()">Publications</a>
+    <a href="#teaching"     onclick="closeNav()">Teaching</a>
+    <a href="#visual"       onclick="closeNav()">Visual Journal</a>
+    <a href="#awards"       onclick="closeNav()">Awards</a>
+    <a href="#contact"      onclick="closeNav()">Contact</a>
+  </nav>
 </nav>
 
-<!-- ── HERO ────────────────────────────── -->
+<!-- ══════ HERO ══════ -->
 <section class="hero">
-  <div class="hero-panel">
-    <div class="hero-panel-img">
-      <img src="photo.jpg" alt="Kawshik Ray">
-    </div>
-    <div class="hero-text">
-      <div class="label">Assistant Professor of English</div>
-      <h1 class="hero-name">Kawshik<br><em>Ray</em></h1>
-      <p class="hero-role">PhD, Indian Institute of Technology Kanpur</p>
-      <p class="hero-affil">Amity Institute of English Studies and Research<br>Amity University Kolkata</p>
+  <div class="hero-image">
+    <img src="photo.jpg" alt="Kawshik Ray" loading="eager">
+    <div class="hero-name-overlay">
+      <span class="label">Assistant Professor of English</span>
+      <h1>Kawshik<br><em>Ray</em></h1>
     </div>
   </div>
-  <div class="hero-quote-panel">
-    <blockquote class="hero-quote">
-      "An earthbound in a closed cosmos."
-    </blockquote>
+
+  <div class="hero-content">
+    <p class="hero-sub">PhD, Indian Institute of Technology Kanpur</p>
+    <p class="hero-affil">Amity Institute of English Studies and Research, Amity University Kolkata</p>
+    <blockquote class="hero-quote">"An earthbound in a closed cosmos."</blockquote>
     <p class="hero-bio">
       I work at the intersection of literary studies, environmental humanities,
       and science studies — examining how fiction participates in the making of
@@ -690,119 +754,92 @@ footer {
   </div>
 </section>
 
-<!-- ── NEWS BAND ───────────────────────── -->
+<!-- ══════ NEWS BAND ══════ -->
 <div class="news-band">
   <div class="news-inner">
     <div class="news-label">Recent News</div>
     <div class="news-text">
-      <strong>"The Emerging Political Actors in the Anthropocene"</strong>&nbsp;—
-      accepted in <em>Environmental Humanities</em> (Duke University Press, Scopus Q1). Forthcoming November 2026.
+      "The Emerging Political Actors in the Anthropocene: Cosmopolitics of the Earthbounds in Amitav Ghosh's <em>Gun Island</em>" accepted in <strong><em>Environmental Humanities</em></strong> (Duke University Press · Scopus Q1) — forthcoming November 2026.
     </div>
   </div>
 </div>
 
-<!-- ── ABOUT ────────────────────────────── -->
+<!-- ══════ ABOUT ══════ -->
 <section class="section" id="about">
-  <div class="container">
+  <div class="wrap">
     <div class="section-header anim">
-      <div class="label">About</div>
+      <span class="label">About</span>
       <h2 class="section-title">Scholar · Poet · Visual Ethnographer</h2>
     </div>
     <div class="about-grid">
-      <div class="about-body anim" style="animation-delay:.1s">
-        <p>
-          I am Assistant Professor of English at the Amity Institute of English Studies
-          and Research, Amity University Kolkata, where I teach Business Communication,
-          Literary Theory, and Modern Indian English Literature.
-        </p>
-        <p>
-          I completed my PhD from the Indian Institute of Technology Kanpur (2015–2022)
-          with a thesis titled <em>ANT-Ecocriticism in the Anthropocene: Latourian
-          Readings of Select Planetary Fiction</em> (CPI 9.67/10). My research develops
-          a framework of <strong>planetary cosmopolitics</strong> that extends Bruno
-          Latour's Earthbound into a distributed relational ontology attentive to
-          fiction, climate change, and nonhuman articulation.
-        </p>
-        <p>
-          My work draws on thinkers including Isabelle Stengers, Donna Haraway,
-          Anna Tsing, Rob Nixon, and Amitav Ghosh, integrating Whitehead's process
-          philosophy with postcolonial ecocriticism. I treat fiction not as
-          illustration of theory but as its very ground.
-        </p>
-        <p>
-          Beyond the academy, I write poetry in Bengali and English, and practice
-          photography as a form of visual ethnography. My intellectual commitments
-          are informed by sustained engagement with Kashmir Shaivism's pratyabhijna
-          framework — a recognition of consciousness as constitutive of all relation.
-        </p>
+      <div class="about-body anim" style="animation-delay:.08s">
+        <p>I am Assistant Professor of English at the Amity Institute of English Studies and Research, Amity University Kolkata, where I teach Business Communication, Literary Theory, and Modern Indian English Literature.</p>
+        <p>I completed my PhD from the Indian Institute of Technology Kanpur (2015–2022) with a thesis titled <em>ANT-Ecocriticism in the Anthropocene: Latourian Readings of Select Planetary Fiction</em> (CPI 9.67/10). My research develops a framework of <strong>planetary cosmopolitics</strong> that extends Bruno Latour's Earthbound into a distributed relational ontology attentive to fiction, climate change, and nonhuman articulation.</p>
+        <p>My work draws on thinkers including Isabelle Stengers, Donna Haraway, Anna Tsing, Rob Nixon, and Amitav Ghosh, integrating Whitehead's process philosophy with contemporary ecocriticism. I treat fiction not as illustration of theory but as its very ground.</p>
+        <p>Beyond the academy, I write poetry in Bengali and English, and practice photography as a form of visual ethnography. A documentary photograph from my series <em>Street-Dwellers in Calcutta</em> was published by BBC UK in 2013.</p>
       </div>
-      <div class="about-meta anim" style="animation-delay:.2s">
+      <div class="about-meta anim" style="animation-delay:.16s">
         <div class="meta-item">
-          <div class="label">Education</div>
+          <span class="label">Education</span>
           <h4>PhD, English — Indian Institute of Technology Kanpur</h4>
           <p>2015–2022 · CPI 9.67/10 · ANT-Ecocriticism & Planetary Fiction</p>
         </div>
         <div class="meta-item">
-          <div class="label">Current Position</div>
+          <span class="label">Current Position</span>
           <h4>Assistant Professor of English</h4>
           <p>Amity Institute of English Studies and Research<br>Amity University Kolkata</p>
         </div>
         <div class="meta-item">
-          <div class="label">Research Identifiers</div>
+          <span class="label">Research Identifiers</span>
           <h4>ORCID: 0000-0001-6723-7561</h4>
-          <p>
-            <a href="https://orcid.org/0000-0001-6723-7561" target="_blank" style="color:var(--gold)">orcid.org/0000-0001-6723-7561</a>
-          </p>
+          <p><a href="https://orcid.org/0000-0001-6723-7561" target="_blank">orcid.org/0000-0001-6723-7561</a></p>
         </div>
         <div class="meta-item">
-          <div class="label">Languages & Interests</div>
+          <span class="label">Languages & Interests</span>
           <h4>Bengali · English · Hindi</h4>
-          <p>Poetry · Photography · Kashmir Shaivism · Process Philosophy</p>
+          <p>Poetry · Photography · Process Philosophy · Ethnographic Fieldwork</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── RESEARCH ──────────────────────────── -->
+<!-- ══════ RESEARCH ══════ -->
 <section class="section section-dark" id="research">
-  <div class="container">
+  <div class="wrap">
     <div class="section-header anim">
-      <div class="label" style="color:var(--gold-lt)">Research</div>
+      <span class="label" style="color:var(--gold-lt)">Research</span>
       <h2 class="section-title" style="color:#fff">Areas of Inquiry</h2>
-      <p class="section-lead">
-        My research spans environmental humanities, planetary fiction, posthumanism,
-        and Dalit feminist studies — united by a commitment to relational ontology.
-      </p>
+      <p class="section-lead">My research spans environmental humanities, planetary fiction, posthumanism, and Dalit feminist studies — united by a commitment to relational ontology.</p>
     </div>
     <div class="research-grid anim" style="animation-delay:.1s">
       <div class="research-card">
-        <div class="label">Primary</div>
+        <span class="label">Primary</span>
         <h3>Planetary Cosmopolitics</h3>
         <p>Extending Latour's Earthbound into a distributed relational ontology. Fiction as cosmopolitical laboratory for thinking nonhuman agency and collective futures.</p>
       </div>
       <div class="research-card">
-        <div class="label">Primary</div>
+        <span class="label">Primary</span>
         <h3>Environmental Humanities</h3>
-        <p>Climate change, Anthropocene studies, slow violence, ecological ethics. Reading planetary crisis through literature, science studies, and postcolonial theory.</p>
+        <p>Climate change, Anthropocene studies, slow violence, ecological ethics. Reading planetary crisis through literature, science studies, and critical theory.</p>
       </div>
       <div class="research-card">
-        <div class="label">Primary</div>
+        <span class="label">Primary</span>
         <h3>Actor-Network Theory</h3>
         <p>Latourian readings of literary and cultural texts. ANT-Ecocriticism as a methodological framework for tracking nonhuman political actors.</p>
       </div>
       <div class="research-card">
-        <div class="label">Secondary</div>
+        <span class="label">Secondary</span>
         <h3>Dalit Feminist Studies</h3>
         <p>Intersectionality, representational politics, and collective subjectivity. Reading Bama and Baby Kamble through Crenshaw's intersectional framework.</p>
       </div>
       <div class="research-card">
-        <div class="label">Secondary</div>
+        <span class="label">Secondary</span>
         <h3>Sanskrit Aesthetics & Relational Ontology</h3>
         <p>Sahitya as relational ontology — reading Abhinavagupta alongside Whitehead, Barad, and Latour for a nonmodern aesthetics beyond representation.</p>
       </div>
       <div class="research-card">
-        <div class="label">Secondary</div>
+        <span class="label">Secondary</span>
         <h3>Process Philosophy</h3>
         <p>Whitehead's philosophy of organism in dialogue with posthumanism and Anthropocene theory. Temporality, event, and multiple worldhoods.</p>
       </div>
@@ -810,119 +847,109 @@ footer {
   </div>
 </section>
 
-<!-- ── PUBLICATIONS ──────────────────────── -->
+<!-- ══════ PUBLICATIONS ══════ -->
 <section class="section" id="publications">
-  <div class="container">
+  <div class="wrap">
     <div class="section-header anim">
-      <div class="label">Scholarship</div>
+      <span class="label">Scholarship</span>
       <h2 class="section-title">Publications</h2>
       <p class="section-lead">Peer-reviewed articles, chapters, and forthcoming work.</p>
     </div>
-
     <div class="pub-list anim" style="animation-delay:.1s">
 
       <div class="pub-item">
         <div class="pub-year">Forthcoming<br>Nov 2026</div>
-        <div class="pub-body">
-          <div class="pub-title">
-            The Emerging Political Actors in the Anthropocene: Cosmopolitics of the Earthbounds in Amitav Ghosh's <em>Gun Island</em>
+        <div class="pub-content">
+          <div class="pub-title">The Emerging Political Actors in the Anthropocene: Cosmopolitics of the Earthbounds in Amitav Ghosh's <em>Gun Island</em></div>
+          <div class="pub-journal"><em>Environmental Humanities</em>, Duke University Press</div>
+          <div class="pub-badges">
+            <span class="pub-badge forthcoming">Forthcoming</span>
+            <span class="pub-badge q1">Scopus Q1</span>
+            <a href="preprint.pdf" class="pub-badge" download target="_blank" style="background:var(--gold);cursor:pointer;">⬇ Preprint PDF</a>
           </div>
-          <div class="pub-journal">
-            <em>Environmental Humanities</em>, Duke University Press
-          </div>
-          <span class="pub-badge forthcoming">Forthcoming</span>
-          <span class="pub-badge q1">Scopus Q1</span>
-          <a href="preprint.pdf" class="pub-badge" target="_blank" download style="background:var(--gold); margin-left:4px; cursor:pointer;">⬇ Preprint PDF</a>
         </div>
       </div>
 
       <div class="pub-item">
         <div class="pub-year">Published</div>
-        <div class="pub-body">
-          <div class="pub-title">
-            A Comparative Reading of Bama's <em>Karukku</em> and Baby Kamble's <em>The Prisons We Broke</em>
-          </div>
-          <div class="pub-journal">
-            <em>Contemporary Voice of Dalits</em>, SAGE Publications
-          </div>
-          <span class="pub-badge">SAGE · Scopus</span>
+        <div class="pub-content">
+          <div class="pub-title">A Comparative Reading of Bama's <em>Karukku</em> and Baby Kamble's <em>The Prisons We Broke</em>: A Dalit Feminist Approach</div>
+          <div class="pub-journal"><em>Contemporary Voice of Dalits</em>, SAGE Publications. ISSN 2455-328X. doi: 10.1177/2455328X251356</div>
+          <div class="pub-badges"><span class="pub-badge">SAGE · Web of Science</span></div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2019</div>
+        <div class="pub-content">
+          <div class="pub-title">Ecology as a Fact: 'Rescuing' Nature from Discourse — An Ecocritical Reading of Two Poems of Robert Frost</div>
+          <div class="pub-journal"><em>Daath Voyage</em>, vol. 4, no. 3, pp. 38–46. ISSN 2455-7544</div>
+          <div class="pub-badges"><span class="pub-badge">Journal Article</span></div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2017</div>
+        <div class="pub-content">
+          <div class="pub-title">Towards an Ecological Ethics: A Reading of Cormac McCarthy's <em>The Road</em></div>
+          <div class="pub-journal"><em>Daath Voyage</em>, vol. 2, no. 4, pp. 119–131. ISSN 2455-7544</div>
+          <div class="pub-badges"><span class="pub-badge">Journal Article</span></div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2017</div>
+        <div class="pub-content">
+          <div class="pub-title">The Plurality of Immigrant Experiences: Mrs. Sen's Imaginary Homeland</div>
+          <div class="pub-journal"><em>GNOSIS</em>, vol. 4, no. 1, pp. 163–168. ISSN 2394-0131</div>
+          <div class="pub-badges"><span class="pub-badge">Journal Article</span></div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2015</div>
+        <div class="pub-content">
+          <div class="pub-title">Mental Imagery for Effective Education: Literature and Learning</div>
+          <div class="pub-journal"><em>Proceedings of the International Seminar on Enhancing Quality in Education</em>, University of Calcutta, 19 August 2015. ISBN 978-81-923675-2-1</div>
+          <div class="pub-badges"><span class="pub-badge">Conference Proceedings</span></div>
         </div>
       </div>
 
     </div>
-
-    <!-- WORKS IN PROGRESS -->
-    <div style="margin-top:64px">
-      <div class="section-header anim" style="margin-bottom:32px">
-        <div class="label">Works in Progress</div>
-        <h3 style="font-family:var(--serif); font-size:1.8rem; font-weight:300">Manuscripts Under Development</h3>
-      </div>
-      <div class="wip-grid anim" style="animation-delay:.1s">
-        <div class="wip-card">
-          <div class="label">Manuscript</div>
-          <h4>Planetary Cosmopolitics in Vandana Singh's <em>Entanglement</em></h4>
-          <div class="wip-target">Target: <em>Theory, Culture & Society</em> (SAGE) — under revision</div>
-        </div>
-        <div class="wip-card">
-          <div class="label">Manuscript</div>
-          <h4>Sahitya as Relational Ontology: Word, Affect, and the Reader Beyond Representation</h4>
-          <div class="wip-target">Target: <em>Philosophy East and West</em> (Scopus Q2)</div>
-        </div>
-        <div class="wip-card">
-          <div class="label">Manuscript</div>
-          <h4>Mythologization of Gaia in the Anthropocene: <em>The Hungry Tide</em> and <em>Gun Island</em></h4>
-          <div class="wip-target">Reading Ghosh through Latour and Stengers</div>
-        </div>
-        <div class="wip-card">
-          <div class="label">Manuscript</div>
-          <h4>Multiple Temporalities and the Anthropocene Imaginary</h4>
-          <div class="wip-target">A 9,000-word theoretical intervention</div>
-        </div>
-        <div class="wip-card">
-          <div class="label">Revision</div>
-          <h4>American Pastoral and Ecological Nostalgia</h4>
-          <div class="wip-target">Target: <em>The Explicator</em></div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- ── TEACHING ──────────────────────────── -->
+<!-- ══════ TEACHING ══════ -->
 <section class="section section-alt" id="teaching">
-  <div class="container">
+  <div class="wrap">
     <div class="section-header anim">
-      <div class="label">Pedagogy</div>
+      <span class="label">Pedagogy</span>
       <h2 class="section-title">Teaching</h2>
-      <p class="section-lead">
-        I approach teaching as a form of relational inquiry — cultivating critical
-        thinking, communicative precision, and imaginative attentiveness in students.
-      </p>
+      <p class="section-lead">I approach teaching as a form of relational inquiry — cultivating critical thinking, communicative precision, and imaginative attentiveness in students.</p>
     </div>
     <div class="teaching-grid anim" style="animation-delay:.1s">
       <div class="teaching-card">
-        <div class="label">Current</div>
+        <span class="label">Current</span>
         <h3>Business Communication</h3>
         <p>Professional writing, workplace communication, presentation skills, interpersonal dynamics, and business discourse for undergraduate students.</p>
       </div>
       <div class="teaching-card">
-        <div class="label">Current</div>
+        <span class="label">Current</span>
         <h3>English Drama</h3>
         <p>Elizabethan to Restoration period, dramatic traditions, theatre history, and textual performance studies.</p>
       </div>
       <div class="teaching-card">
-        <div class="label">Current</div>
+        <span class="label">Current</span>
         <h3>Literary Theory</h3>
         <p>Classical to contemporary theory: structuralism, poststructuralism, posthumanism, ecocriticism, and critical race theory.</p>
       </div>
       <div class="teaching-card">
-        <div class="label">Current</div>
+        <span class="label">Current</span>
         <h3>Modern Indian English Literature</h3>
-        <p>Indian literary modernities, postcolonial writing, identity, politics, and contemporary Anglophone literary cultures.</p>
+        <p>Indian literary modernities, writing, identity, politics, and contemporary Anglophone literary cultures.</p>
       </div>
       <div class="teaching-card">
-        <div class="label">IIT Kanpur</div>
+        <span class="label">IIT Kanpur</span>
         <h3>Soft Skills & Communication</h3>
         <p>Soft Skills (HSS401A), Communication Skills (COM200), and NPTEL MOOC programmes at IIT Kanpur during doctoral years.</p>
       </div>
@@ -930,19 +957,17 @@ footer {
   </div>
 </section>
 
-<!-- ── VISUAL JOURNAL ────────────────────── -->
+<!-- ══════ VISUAL JOURNAL ══════ -->
 <section class="section" id="visual">
-  <div class="container">
+  <div class="wrap">
     <div class="section-header anim">
-      <div class="label">Photography</div>
+      <span class="label">Photography</span>
       <h2 class="section-title">Visual Journal</h2>
-      <p class="section-lead">
-        Photography as a form of visual ethnography — attentiveness to light, place, and the nonhuman world.
-      </p>
+      <p class="section-lead">Photography as a form of visual ethnography — attentiveness to light, place, and the nonhuman world.</p>
     </div>
     <div class="slider-wrap anim" style="animation-delay:.1s">
-      <button class="slider-btn prev" onclick="prevSlide()" aria-label="Previous">&#8249;</button>
-      <button class="slider-btn next" onclick="nextSlide()" aria-label="Next">&#8250;</button>
+      <button class="slider-btn prev" id="prevBtn" aria-label="Previous photo">&#8249;</button>
+      <button class="slider-btn next" id="nextBtn" aria-label="Next photo">&#8250;</button>
       <div class="slider-track" id="sliderTrack">
         <div class="slider-slide"><img src="insta1.jpeg" alt="Visual Journal 1" loading="lazy"></div>
         <div class="slider-slide"><img src="insta2.jpeg" alt="Visual Journal 2" loading="lazy"></div>
@@ -956,11 +981,11 @@ footer {
   </div>
 </section>
 
-<!-- ── AWARDS ────────────────────────────── -->
+<!-- ══════ AWARDS ══════ -->
 <section class="section section-dark" id="awards">
-  <div class="container">
+  <div class="wrap">
     <div class="section-header anim">
-      <div class="label" style="color:var(--gold-lt)">Recognition</div>
+      <span class="label" style="color:var(--gold-lt)">Recognition</span>
       <h2 class="section-title" style="color:#fff">Awards & Honours</h2>
     </div>
     <div class="awards-list anim" style="animation-delay:.1s">
@@ -994,8 +1019,8 @@ footer {
       </div>
     </div>
 
-    <div style="margin-top:56px" class="anim">
-      <div class="label" style="color:var(--gold-lt); margin-bottom:16px">Academic Profiles</div>
+    <div class="anim" style="animation-delay:.2s; margin-top:48px">
+      <span class="label" style="color:var(--gold-lt); margin-bottom:16px">Academic Profiles</span>
       <div class="profiles">
         <a href="https://orcid.org/0000-0001-6723-7561" class="profile-link" target="_blank">ORCID</a>
         <a href="https://scholar.google.com/citations?user=sSU0UMgAAAAJ&hl=en" class="profile-link" target="_blank">Google Scholar</a>
@@ -1003,83 +1028,109 @@ footer {
         <a href="https://www.instagram.com/raykawshik/" class="profile-link" target="_blank">Instagram</a>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ── FOOTER ────────────────────────────── -->
+<!-- ══════ FOOTER ══════ -->
 <footer id="contact">
   <div class="footer-inner">
     <div class="footer-brand">
       <h3>Kawshik Ray</h3>
-      <p>
-        Assistant Professor of English<br>
-        Environmental Humanities · Planetary Cosmopolitics<br>
-        Literary Theory · Posthumanism
-      </p>
+      <p>Assistant Professor of English<br>Environmental Humanities · Planetary Cosmopolitics<br>Literary Theory · Posthumanism</p>
     </div>
     <div class="footer-col">
       <h5>Contact</h5>
       <a href="mailto:kray@kol.amity.edu">kray@kol.amity.edu</a>
       <a href="mailto:gogolray@gmail.com">gogolray@gmail.com</a>
-      <p style="margin-top:8px">+91 89605 62636</p>
+      <p style="margin-top:6px">+91 89605 62636</p>
     </div>
     <div class="footer-col">
       <h5>Affiliation</h5>
       <p>Amity Institute of English Studies and Research</p>
-      <p style="margin-top:4px">Amity University Kolkata</p>
-      <p style="margin-top:4px">Kolkata, West Bengal, India</p>
+      <p>Amity University Kolkata</p>
+      <p>Kolkata, West Bengal, India</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Kawshik Ray. All rights reserved.</span>
+    <span>© 2026 Kawshik Ray. All rights reserved.</span>
     <span>ORCID: 0000-0001-6723-7561</span>
   </div>
 </footer>
 
-<!-- ── SCRIPTS ───────────────────────────── -->
+<!-- ══════ SCRIPTS ══════ -->
 <script>
-/* Slider */
-let currentSlide = 0;
-const totalSlides = 6;
-const track = document.getElementById('sliderTrack');
-const dotsContainer = document.getElementById('sliderDots');
+/* ── Hamburger nav ── */
+const toggle = document.getElementById('navToggle');
+const drawer = document.getElementById('navDrawer');
 
-for(let i=0; i<totalSlides; i++){
-  const d = document.createElement('button');
-  d.className = 'slider-dot' + (i===0?' active':'');
-  d.setAttribute('aria-label', 'Go to slide '+(i+1));
-  d.onclick = ()=>goSlide(i);
-  dotsContainer.appendChild(d);
-}
-
-function updateSlider(){
-  track.style.transform = `translateX(-${currentSlide*100}%)`;
-  document.querySelectorAll('.slider-dot').forEach((d,i)=>{
-    d.classList.toggle('active', i===currentSlide);
-  });
-}
-function goSlide(n){ currentSlide=n; updateSlider(); }
-function nextSlide(){ currentSlide=(currentSlide+1)%totalSlides; updateSlider(); }
-function prevSlide(){ currentSlide=(currentSlide-1+totalSlides)%totalSlides; updateSlider(); }
-
-let autoTimer = setInterval(nextSlide, 5000);
-track.parentElement.addEventListener('mouseenter',()=>clearInterval(autoTimer));
-track.parentElement.addEventListener('mouseleave',()=>{autoTimer=setInterval(nextSlide,5000);});
-
-let startX=0;
-track.addEventListener('touchstart', e=>{ startX=e.touches[0].clientX; }, {passive:true});
-track.addEventListener('touchend', e=>{
-  const dx = e.changedTouches[0].clientX - startX;
-  if(dx < -50) nextSlide();
-  if(dx >  50) prevSlide();
+toggle.addEventListener('click', () => {
+  const isOpen = drawer.classList.toggle('open');
+  toggle.classList.toggle('open', isOpen);
+  toggle.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-},{ threshold:0.12 });
-document.querySelectorAll('.anim').forEach(el=>observer.observe(el));
-</script>
+function closeNav() {
+  drawer.classList.remove('open');
+  toggle.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
 
+document.addEventListener('click', e => {
+  if (!toggle.contains(e.target) && !drawer.contains(e.target)) closeNav();
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeNav();
+});
+
+/* ── Slider ── */
+let cur = 0;
+const TOTAL = 6;
+const track = document.getElementById('sliderTrack');
+const dotsWrap = document.getElementById('sliderDots');
+
+for (let i = 0; i < TOTAL; i++) {
+  const d = document.createElement('button');
+  d.className = 'slider-dot' + (i === 0 ? ' active' : '');
+  d.setAttribute('aria-label', 'Photo ' + (i + 1));
+  d.addEventListener('click', () => go(i));
+  dotsWrap.appendChild(d);
+}
+
+function go(n) {
+  cur = ((n % TOTAL) + TOTAL) % TOTAL;
+  track.style.transform = `translateX(-${cur * 100}%)`;
+  dotsWrap.querySelectorAll('.slider-dot').forEach((d, i) =>
+    d.classList.toggle('active', i === cur)
+  );
+}
+
+document.getElementById('nextBtn').addEventListener('click', () => go(cur + 1));
+document.getElementById('prevBtn').addEventListener('click', () => go(cur - 1));
+
+let timer = setInterval(() => go(cur + 1), 5000);
+const sliderEl = track.parentElement;
+
+sliderEl.addEventListener('mouseenter',  () => clearInterval(timer));
+sliderEl.addEventListener('mouseleave',  () => { timer = setInterval(() => go(cur + 1), 5000); });
+sliderEl.addEventListener('focusin',     () => clearInterval(timer));
+sliderEl.addEventListener('focusout',    () => { timer = setInterval(() => go(cur + 1), 5000); });
+
+let tx = 0;
+track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+track.addEventListener('touchend',   e => {
+  const dx = e.changedTouches[0].clientX - tx;
+  if (dx < -40) go(cur + 1);
+  if (dx >  40) go(cur - 1);
+});
+
+/* ── Scroll-reveal ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.anim').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
