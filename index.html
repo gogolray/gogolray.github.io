@@ -39,7 +39,6 @@ body {
   background: var(--paper);
   color: var(--ink);
   line-height: 1.75;
-  /* subtle paper grain */
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
 }
@@ -381,6 +380,37 @@ nav {
 .pub-badge.forthcoming { background: var(--panel); }
 .pub-badge.q1 { background: #2d5a3d; }
 
+/* ── WORKING PAPERS ────────────────────────── */
+.wip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.wip-card {
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 28px;
+  transition: box-shadow .2s, transform .15s;
+}
+.wip-card:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+  transform: translateY(-2px);
+}
+.wip-card .label { margin-bottom: 12px; }
+.wip-card h4 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+.wip-card .wip-target {
+  font-size: .8rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
 /* ── TEACHING ──────────────────────────────── */
 .teaching-grid {
   display: grid;
@@ -418,22 +448,21 @@ nav {
 }
 .slider-track {
   display: flex;
-  width: 100%;
   height: 100%;
   transition: transform .55s cubic-bezier(.4,0,.2,1);
 }
 .slider-slide {
-  flex: 0 0 100%;
-  width: 100%;
+  min-width: 100%;
   height: 100%;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel);
 }
 .slider-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  display: block;
 }
 .slider-btn {
   position: absolute;
@@ -702,8 +731,9 @@ footer {
         </p>
         <p>
           Beyond the academy, I write poetry in Bengali and English, and practice
-          photography as a form of visual ethnography. A documentary photograph from
-          my series <em>Street-Dwellers in Calcutta</em> was published by BBC UK in 2013.
+          photography as a form of visual ethnography. My intellectual commitments
+          are informed by sustained engagement with Kashmir Shaivism's pratyabhijna
+          framework — a recognition of consciousness as constitutive of all relation.
         </p>
       </div>
       <div class="about-meta anim" style="animation-delay:.2s">
@@ -727,7 +757,7 @@ footer {
         <div class="meta-item">
           <div class="label">Languages & Interests</div>
           <h4>Bengali · English · Hindi</h4>
-          <p>Poetry · Photography · Process Philosophy · Ethnographic Fieldwork</p>
+          <p>Poetry · Photography · Kashmir Shaivism · Process Philosophy</p>
         </div>
       </div>
     </div>
@@ -821,57 +851,37 @@ footer {
 
     </div>
 
-    <!-- ADDITIONAL PUBLICATIONS -->
-    <div style="margin-top:16px">
-      <div class="pub-item">
-        <div class="pub-year">2019</div>
-        <div class="pub-body">
-          <div class="pub-title">
-            Ecology as a Fact: 'Rescuing' Nature from Discourse — An Ecocritical Reading of Two Poems of Robert Frost
-          </div>
-          <div class="pub-journal">
-            <em>Daath Voyage</em>, vol. 4, no. 3, pp. 38–46. ISSN 2455-7544
-          </div>
-          <span class="pub-badge">Journal Article</span>
-        </div>
+    <!-- WORKS IN PROGRESS -->
+    <div style="margin-top:64px">
+      <div class="section-header anim" style="margin-bottom:32px">
+        <div class="label">Works in Progress</div>
+        <h3 style="font-family:var(--serif); font-size:1.8rem; font-weight:300">Manuscripts Under Development</h3>
       </div>
-
-      <div class="pub-item">
-        <div class="pub-year">2017</div>
-        <div class="pub-body">
-          <div class="pub-title">
-            Towards an Ecological Ethics: A Reading of Cormac McCarthy's <em>The Road</em>
-          </div>
-          <div class="pub-journal">
-            <em>Daath Voyage</em>, vol. 2, no. 4, pp. 119–131. ISSN 2455-7544
-          </div>
-          <span class="pub-badge">Journal Article</span>
+      <div class="wip-grid anim" style="animation-delay:.1s">
+        <div class="wip-card">
+          <div class="label">Manuscript</div>
+          <h4>Planetary Cosmopolitics in Vandana Singh's <em>Entanglement</em></h4>
+          <div class="wip-target">Target: <em>Theory, Culture & Society</em> (SAGE) — under revision</div>
         </div>
-      </div>
-
-      <div class="pub-item">
-        <div class="pub-year">2017</div>
-        <div class="pub-body">
-          <div class="pub-title">
-            The Plurality of Immigrant Experiences: Mrs. Sen's Imaginary Homeland
-          </div>
-          <div class="pub-journal">
-            <em>GNOSIS</em>, vol. 4, no. 1, pp. 163–168. ISSN 2394-0131
-          </div>
-          <span class="pub-badge">Journal Article</span>
+        <div class="wip-card">
+          <div class="label">Manuscript</div>
+          <h4>Sahitya as Relational Ontology: Word, Affect, and the Reader Beyond Representation</h4>
+          <div class="wip-target">Target: <em>Philosophy East and West</em> (Scopus Q2)</div>
         </div>
-      </div>
-
-      <div class="pub-item">
-        <div class="pub-year">2015</div>
-        <div class="pub-body">
-          <div class="pub-title">
-            Mental Imagery for Effective Education: Literature and Learning
-          </div>
-          <div class="pub-journal">
-            <em>Proceedings of the International Seminar on Enhancing Quality in Education</em>, University of Calcutta, 19 August 2015. ISBN 978-81-923675-2-1
-          </div>
-          <span class="pub-badge">Conference Proceedings</span>
+        <div class="wip-card">
+          <div class="label">Manuscript</div>
+          <h4>Mythologization of Gaia in the Anthropocene: <em>The Hungry Tide</em> and <em>Gun Island</em></h4>
+          <div class="wip-target">Reading Ghosh through Latour and Stengers</div>
+        </div>
+        <div class="wip-card">
+          <div class="label">Manuscript</div>
+          <h4>Multiple Temporalities and the Anthropocene Imaginary</h4>
+          <div class="wip-target">A 9,000-word theoretical intervention</div>
+        </div>
+        <div class="wip-card">
+          <div class="label">Revision</div>
+          <h4>American Pastoral and Ecological Nostalgia</h4>
+          <div class="wip-target">Target: <em>The Explicator</em></div>
         </div>
       </div>
     </div>
@@ -984,8 +994,7 @@ footer {
       </div>
     </div>
 
-    <!-- Academic Profiles -->
-    <div style="margin-top:56px" class="anim" style="animation-delay:.2s">
+    <div style="margin-top:56px" class="anim">
       <div class="label" style="color:var(--gold-lt); margin-bottom:16px">Academic Profiles</div>
       <div class="profiles">
         <a href="https://orcid.org/0000-0001-6723-7561" class="profile-link" target="_blank">ORCID</a>
@@ -1036,7 +1045,6 @@ const totalSlides = 6;
 const track = document.getElementById('sliderTrack');
 const dotsContainer = document.getElementById('sliderDots');
 
-/* Build dots */
 for(let i=0; i<totalSlides; i++){
   const d = document.createElement('button');
   d.className = 'slider-dot' + (i===0?' active':'');
@@ -1055,12 +1063,10 @@ function goSlide(n){ currentSlide=n; updateSlider(); }
 function nextSlide(){ currentSlide=(currentSlide+1)%totalSlides; updateSlider(); }
 function prevSlide(){ currentSlide=(currentSlide-1+totalSlides)%totalSlides; updateSlider(); }
 
-/* Auto-advance */
 let autoTimer = setInterval(nextSlide, 5000);
 track.parentElement.addEventListener('mouseenter',()=>clearInterval(autoTimer));
 track.parentElement.addEventListener('mouseleave',()=>{autoTimer=setInterval(nextSlide,5000);});
 
-/* Touch swipe */
 let startX=0;
 track.addEventListener('touchstart', e=>{ startX=e.touches[0].clientX; }, {passive:true});
 track.addEventListener('touchend', e=>{
@@ -1069,7 +1075,6 @@ track.addEventListener('touchend', e=>{
   if(dx >  50) prevSlide();
 });
 
-/* Scroll animation */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
 },{ threshold:0.12 });
